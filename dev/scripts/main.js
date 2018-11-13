@@ -13,9 +13,9 @@ const turnOrder = ['red'];
 $(() => {
 
 
-  $('.column').on('click', () => {
-    $('.column')
-  })
+  // $('.column').on('click', () => {
+  //   $('.column')
+  // })
   
   // CLICK ON COLUMN TO ADD PIECE
   // THIS CODE WORKS!!! ⬆️ TESTING DYNAMIC EVENT LISTENER ABOVE
@@ -115,8 +115,10 @@ $(() => {
     const currentColor = turnOrder[turnOrder.length - 1];
     if (currentColor === 'red') {
       turnOrder.push('yellow');
+      $('.turn-indicator').text(`It is now the Yellow Player's turn`);
     } else if (currentColor === 'yellow') {
       turnOrder.push('red');
+      $('.turn-indicator').text(`It is now the Red Player's turn`);
     }
   }
 
