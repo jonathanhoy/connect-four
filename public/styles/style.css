@@ -140,9 +140,9 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -161,3 +161,9 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   background: white;
   border-radius: 50%;
   margin: 5px 0; }
+
+.red {
+  background-color: red; }
+
+.yellow {
+  background-color: yellow; }
