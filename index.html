@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Connect Four</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 	<link rel="stylesheet" href="public/styles/style.css">
 </head>
 <body>
@@ -12,65 +13,65 @@
 	<h1>Connect Four</h1>
 
 	<section class="board">
-		<div class="column column-a">
-			<div class="cell cell1"></div>
-			<div class="cell cell2"></div>
-			<div class="cell cell3"></div>
-			<div class="cell cell4"></div>
-			<div class="cell cell5"></div>
-			<div class="cell cell6"></div>
+		<div class="column column-a" data-column="a">
+			<div class="cell cell-1"></div>
+			<div class="cell cell-2"></div>
+			<div class="cell cell-3"></div>
+			<div class="cell cell-4"></div>
+			<div class="cell cell-5"></div>
+			<div class="cell cell-6"></div>
 		</div>
-		<div class="column column-b">
-			<div class="cell cell1"></div>
-			<div class="cell cell2"></div>
-			<div class="cell cell3"></div>
-			<div class="cell cell4"></div>
-			<div class="cell cell5"></div>
-			<div class="cell cell6"></div>
+		<div class="column column-b" data-column="b">
+			<div class="cell cell-1"></div>
+			<div class="cell cell-2"></div>
+			<div class="cell cell-3"></div>
+			<div class="cell cell-4"></div>
+			<div class="cell cell-5"></div>
+			<div class="cell cell-6"></div>
 		</div>
-		<div class="column column-c">
-			<div class="cell cell1"></div>
-			<div class="cell cell2"></div>
-			<div class="cell cell3"></div>
-			<div class="cell cell4"></div>
-			<div class="cell cell5"></div>
-			<div class="cell cell6"></div>
+		<div class="column column-c" data-column="c">
+			<div class="cell cell-1"></div>
+			<div class="cell cell-2"></div>
+			<div class="cell cell-3"></div>
+			<div class="cell cell-4"></div>
+			<div class="cell cell-5"></div>
+			<div class="cell cell-6"></div>
 		</div>
-		<div class="column column-d">
-			<div class="cell cell1"></div>
-			<div class="cell cell2"></div>
-			<div class="cell cell3"></div>
-			<div class="cell cell4"></div>
-			<div class="cell cell5"></div>
-			<div class="cell cell6"></div>
+		<div class="column column-d" data-column="d">
+			<div class="cell cell-1"></div>
+			<div class="cell cell-2"></div>
+			<div class="cell cell-3"></div>
+			<div class="cell cell-4"></div>
+			<div class="cell cell-5"></div>
+			<div class="cell cell-6"></div>
 		</div>
-		<div class="column column-e">
-			<div class="cell cell1"></div>
-			<div class="cell cell2"></div>
-			<div class="cell cell3"></div>
-			<div class="cell cell4"></div>
-			<div class="cell cell5"></div>
-			<div class="cell cell6"></div>
+		<div class="column column-e" data-column="e">
+			<div class="cell cell-1"></div>
+			<div class="cell cell-2"></div>
+			<div class="cell cell-3"></div>
+			<div class="cell cell-4"></div>
+			<div class="cell cell-5"></div>
+			<div class="cell cell-6"></div>
 		</div>
-		<div class="column column-f">
-			<div class="cell cell1"></div>
-			<div class="cell cell2"></div>
-			<div class="cell cell3"></div>
-			<div class="cell cell4"></div>
-			<div class="cell cell5"></div>
-			<div class="cell cell6"></div>
+		<div class="column column-f" data-column="f">
+			<div class="cell cell-1"></div>
+			<div class="cell cell-2"></div>
+			<div class="cell cell-3"></div>
+			<div class="cell cell-4"></div>
+			<div class="cell cell-5"></div>
+			<div class="cell cell-6"></div>
 		</div>
-		<div class="column column-g">
-			<div class="cell cell1"></div>
-			<div class="cell cell2"></div>
-			<div class="cell cell3"></div>
-			<div class="cell cell4"></div>
-			<div class="cell cell5"></div>
-			<div class="cell cell6"></div>
+		<div class="column column-g" data-column="g">
+			<div class="cell cell-1"></div>
+			<div class="cell cell-2"></div>
+			<div class="cell cell-3"></div>
+			<div class="cell cell-4"></div>
+			<div class="cell cell-5"></div>
+			<div class="cell cell-6"></div>
 		</div>
 	</section>
 	<section class="player-turn">
-		<h2 class="turn-indicator"></h2>
+		<h2>Current Turn: <span class="turn-indicator">Red Player</span></h2>
 	</section>
 
 
