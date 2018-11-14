@@ -1,5 +1,6 @@
-// ARRAYS
-const columns = {
+const app = {};
+
+app.columns = {
   a: [],
   b: [],
   c: [],
@@ -8,42 +9,42 @@ const columns = {
   f: [],
   g: []
 }
-const nextTurn = ['red'];
+app.nextTurn = ['red'];
 
+// CLICK ON COLUMN TO ADD PIECE
+app.addPiece = function() {
+  $('.column').on('click', function () {
+    const index = $(this).data("column");
+    const selectedColumn = app.columns[`${index}`]
+    if (selectedColumn.length === 6) {
+      alert('Invalid move!');
+    } else if (selectedColumn.length < 6) {
+      const color = app.nextTurn[app.nextTurn.length - 1];
+      const cellNum = selectedColumn.length + 1;
+      $(`.column-${index} .cell-${cellNum}`).addClass(`${color}`);
+      selectedColumn.push(`${color}`);
+      app.changeTurn();
+    }
+  });
+}
+
+// CHECK WHOSE TURN AND UPDATE TURN ORDER
+app.changeTurn = function() {
+  const currentColor = app.nextTurn[app.nextTurn.length - 1];
+  if (currentColor === 'red') {
+    app.nextTurn.push('yellow');
+    $('.turn-indicator').text(`Yellow`);
+  } else if (currentColor === 'yellow') {
+    app.nextTurn.push('red');
+    $('.turn-indicator').text(`Red`);
+  }
+};
+
+app.init = function() {
+  app.addPiece();
+}
 
 // DOCUMENT READY
 $(function() {
-
-  // CLICK ON COLUMN TO ADD PIECE
-  function addPiece() {
-    $('.column').on('click', function () {
-      const index = $(this).data("column");
-      const selectedColumn = columns[`${index}`]
-      if (selectedColumn.length === 6) {
-        alert('Invalid move!');
-      } else if (selectedColumn.length < 6) {
-        const color = nextTurn[nextTurn.length - 1];
-        const cellNum = selectedColumn.length + 1;
-        $(`.column-${index} .cell-${cellNum}`).addClass(`${color}`);
-        selectedColumn.push(`${color}`);
-        changeTurn();
-      }
-    });
-  }
-
-  // CHECK WHOSE TURN AND UPDATE TURN ORDER
-  function changeTurn() {
-    const currentColor = nextTurn[nextTurn.length - 1];
-    if (currentColor === 'red') {
-      nextTurn.push('yellow');
-      $('.turn-indicator').text(`Yellow Player`);
-    } else if (currentColor === 'yellow') {
-      nextTurn.push('red');
-      $('.turn-indicator').text(`Red Player`);
-    }
-  };
-
-  addPiece();
-
-
+  app.init();
 })
