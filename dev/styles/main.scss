@@ -1,8 +1,19 @@
 @import 'setup';
 
+h1, h2 {
+  text-align: center;
+}
+
+.board-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .board {
-  display: grid;
+  display: inline-grid;
   grid-template-columns: repeat(7, 70px);
+  border: 1px solid black;
 }
 
 .column {
