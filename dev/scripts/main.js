@@ -30,23 +30,18 @@ app.addPiece = function() {
 
 
       const counter = Object.values(app.columns);
-      let i = cellNum - 1;
-      const j = $(this).data("array");
+      const x = $(this).data("array");
+      const y = cellNum - 1;
+
       // VERTICAL WIN CONDITION
-      if (counter[j].length > 1 && counter[j][i] === counter[j][i - 1] && counter[j][i - 1] === counter[j][i - 2] && counter[j][i - 2] === counter[j][i - 3]) {
+      if (counter[x].length > 1 && counter[x][y] === counter[x][y - 1] && counter[x][y - 1] === counter[x][y - 2] && counter[x][y - 2] === counter[x][y - 3]) {
         alert('VERTICAL WINNER');
       }
 
       // HORIZONTAL WIN CONDITION
-      if (counter[j][i] === counter[j+1][i] && counter[j+1][i] === counter[j+2][i] && counter[j+2][i] === counter[j+3][i]) {
+      if ((counter[x][y] === counter[x + 1][y] && counter[x + 1][y] === counter[x + 2][y] && counter[x + 2][y] === counter[x + 3][y]) || (counter[x-1][y] === counter[x][y] && counter[x][y] === counter[x + 1][y] && counter[x + 1][y] === counter[x + 2][y])) {
         console.log('hello');
       }
-      // console.log(counter[j][i], counter[j+1][i], counter[j+2][i], counter [j+3][i]);
-      // for (let i = 0; i <= 7; i++) {
-      //   console.log(counter[i]);
-      // }
-
-
 
     }
   });
