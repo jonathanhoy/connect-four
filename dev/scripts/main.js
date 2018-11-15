@@ -11,11 +11,13 @@ app.columns = {
 }
 app.nextTurn = ['red'];
 
+console.log(Object.values(app.columns));
+
 // CLICK ON COLUMN TO ADD PIECE
 app.addPiece = function() {
   $('.column').on('click', function () {
     const index = $(this).data("column");
-    const selectedColumn = app.columns[`${index}`]
+    const selectedColumn = app.columns[`${index}`];
     if (selectedColumn.length === 6) {
       alert('Invalid move!');
     } else if (selectedColumn.length < 6) {
@@ -24,6 +26,8 @@ app.addPiece = function() {
       $(`.column-${index} .cell-${cellNum}`).addClass(`${color}`);
       selectedColumn.push(`${color}`);
       app.changeTurn();
+      app.winCondition();
+      console.log(Object.values(app.columns));
     }
   });
 }
@@ -40,6 +44,19 @@ app.changeTurn = function() {
   }
 };
 
+app.winCondition = function() {
+  const counter = Object.values(app.columns);
+  if (counter[0].length > 1 && counter[0][0] === counter[0][1] && counter[0][0] === counter[0][2] && counter[0][0] === counter[0][3] && counter[0][1] === counter[0][2] && counter[0][1] === counter[0][3] && counter[0][2] === counter[0][3]) {
+    alert('You win!!')
+  }
+}
+
+app.winConditionVertical = function() {
+  const index = $(this).data("column");
+  const selectedColumn = app.columns[`${index}`];
+
+}
+
 app.init = function() {
   app.addPiece();
 }
@@ -47,4 +64,5 @@ app.init = function() {
 // DOCUMENT READY
 $(function() {
   app.init();
+  app.winCondition();
 })

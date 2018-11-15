@@ -148,7 +148,7 @@ h1, h2 {
 .board {
   display: inline-grid;
   grid-template-columns: repeat(7, 70px);
-  border: 1px solid black; }
+  border: 5px solid black; }
 
 .column {
   display: -webkit-box;
@@ -169,7 +169,7 @@ h1, h2 {
 .cell {
   height: 50px;
   width: 50px;
-  border: 1px solid black;
+  border: 2px solid black;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
