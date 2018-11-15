@@ -24,39 +24,27 @@ app.addPiece = function() {
       $(`.column-${index} .cell-${cellNum}`).addClass(`${color}`);
       selectedColumn.push(`${color}`);
       app.changeTurn();
-      console.log(selectedColumn);
 
       // app.winCondition();
-      // console.log(Object.values(app.columns));
 
 
 
       const counter = Object.values(app.columns);
       let i = cellNum - 1;
       const j = $(this).data("array");
+      // VERTICAL WIN CONDITION
       if (counter[j].length > 1 && counter[j][i] === counter[j][i - 1] && counter[j][i - 1] === counter[j][i - 2] && counter[j][i - 2] === counter[j][i - 3]) {
-        console.log('winner');
-        alert('winner');
+        alert('VERTICAL WINNER');
       }
-      // if (counter[1][i] === counter[1][i - 1] && counter[1][i - 1] === counter[1][i - 2] && counter[1][i - 2] === counter[1][i - 3]) {
-      //   alert('winner');
-      // }
-      // if (counter[2][i] === counter[2][i - 1] && counter[2][i - 1] === counter[2][i - 2] && counter[2][i - 2] === counter[2][i - 3]) {
-      //   alert('winner');
-      // }
-      // if (counter[3][i] === counter[3][i - 1] && counter[3][i - 1] === counter[3][i - 2] && counter[3][i - 2] === counter[3][i - 3]) {
-      //   alert('winner');
-      // }
-      // if (counter[4][i] === counter[4][i - 1] && counter[4][i - 1] === counter[4][i - 2] && counter[4][i - 2] === counter[4][i - 3]) {
-      //   alert('winner');
-      // }
-      // if (counter[5][i] === counter[5][i - 1] && counter[5][i - 1] === counter[5][i - 2] && counter[5][i - 2] === counter[5][i - 3]) {
-      //   alert('winner');
-      // }
-      // if (counter[6][i] === counter[6][i - 1] && counter[6][i - 1] === counter[6][i - 2] && counter[6][i - 2] === counter[6][i - 3]) {
-      //   alert('winner');
-      // }
 
+      // HORIZONTAL WIN CONDITION
+      if (counter[j][i] === counter[j+1][i] && counter[j+1][i] === counter[j+2][i] && counter[j+2][i] === counter[j+3][i]) {
+        console.log('hello');
+      }
+      // console.log(counter[j][i], counter[j+1][i], counter[j+2][i], counter [j+3][i]);
+      // for (let i = 0; i <= 7; i++) {
+      //   console.log(counter[i]);
+      // }
 
 
 
@@ -76,14 +64,14 @@ app.changeTurn = function() {
   }
 };
 
-// app.winCondition = function() {
-//   const counter = Object.values(app.columns);
-//   for (let i = 0; i <= 7; i++) {
-//     if (counter[i][i] === counter[i][i+1] && counter[i][i+1] === counter[i][i+2] && counter[i][i+2] === counter[i][i+3]) {
-//       alert('You win!!')
-//     }
-//   }
-// }
+app.winCondition = function() {
+  // const counter = Object.values(app.columns);
+  // let i = cellNum - 1;
+  // const j = $(this).data("array");
+  // if (counter[j].length > 1 && counter[j][i] === counter[j][i - 1] && counter[j][i - 1] === counter[j][i - 2] && counter[j][i - 2] === counter[j][i - 3]) {
+  //   alert('winner');
+  // }
+}
 
 app.init = function() {
   app.addPiece();
