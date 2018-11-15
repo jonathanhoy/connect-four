@@ -35,12 +35,15 @@ app.addPiece = function() {
 
       // VERTICAL WIN CONDITION
       if (counter[x].length > 1 && counter[x][y] === counter[x][y - 1] && counter[x][y - 1] === counter[x][y - 2] && counter[x][y - 2] === counter[x][y - 3]) {
-        alert('VERTICAL WINNER');
+        console.log('VERTICAL WINNER');
       }
 
       // HORIZONTAL WIN CONDITION
-      if ((counter[x][y] === counter[x + 1][y] && counter[x + 1][y] === counter[x + 2][y] && counter[x + 2][y] === counter[x + 3][y]) || (counter[x-1][y] === counter[x][y] && counter[x][y] === counter[x + 1][y] && counter[x + 1][y] === counter[x + 2][y])) {
-        console.log('hello');
+      if ((counter[x][y] === counter[x + 1][y] && counter[x + 1][y] === counter[x + 2][y] && counter[x + 2][y] === counter[x + 3][y]) || 
+        (counter[x - 1][y] === counter[x][y] && counter[x][y] === counter[x + 1][y] && counter[x + 1][y] === counter[x + 2][y]) || 
+        (counter[x - 2][y] === counter[x - 1][y] && counter[x - 1][y] === counter[x][y] && counter[x][y] === counter[x + 1][y]) ||
+        (counter[x - 3][y] === counter[x - 2][y] && counter[x - 2][y] === counter[x - 1][y] && counter[x - 1][y] === counter[x][y])) {
+        console.log('HORIZONTAL WINNER');
       }
 
     }
