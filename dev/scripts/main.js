@@ -24,7 +24,7 @@ app.addPiece = function() {
       $(`.column-${index} .cell-${cellNum}`).addClass(`${color}`);
       selectedColumn.push(`${color}`);
       app.changeTurn();
-
+      console.log(selectedColumn);
 
       // app.winCondition();
       // console.log(Object.values(app.columns));
@@ -33,9 +33,29 @@ app.addPiece = function() {
 
       const counter = Object.values(app.columns);
       let i = cellNum - 1;
-      if (counter[0].length >= 4 && counter[0][i] === counter[0][i - 1] && counter[0][i - 1] === counter[0][i - 2] && counter[0][i - 2] === counter[0][i - 3]) {
+      const j = $(this).data("array");
+      if (counter[j].length > 1 && counter[j][i] === counter[j][i - 1] && counter[j][i - 1] === counter[j][i - 2] && counter[j][i - 2] === counter[j][i - 3]) {
+        console.log('winner');
         alert('winner');
       }
+      // if (counter[1][i] === counter[1][i - 1] && counter[1][i - 1] === counter[1][i - 2] && counter[1][i - 2] === counter[1][i - 3]) {
+      //   alert('winner');
+      // }
+      // if (counter[2][i] === counter[2][i - 1] && counter[2][i - 1] === counter[2][i - 2] && counter[2][i - 2] === counter[2][i - 3]) {
+      //   alert('winner');
+      // }
+      // if (counter[3][i] === counter[3][i - 1] && counter[3][i - 1] === counter[3][i - 2] && counter[3][i - 2] === counter[3][i - 3]) {
+      //   alert('winner');
+      // }
+      // if (counter[4][i] === counter[4][i - 1] && counter[4][i - 1] === counter[4][i - 2] && counter[4][i - 2] === counter[4][i - 3]) {
+      //   alert('winner');
+      // }
+      // if (counter[5][i] === counter[5][i - 1] && counter[5][i - 1] === counter[5][i - 2] && counter[5][i - 2] === counter[5][i - 3]) {
+      //   alert('winner');
+      // }
+      // if (counter[6][i] === counter[6][i - 1] && counter[6][i - 1] === counter[6][i - 2] && counter[6][i - 2] === counter[6][i - 3]) {
+      //   alert('winner');
+      // }
 
 
 
