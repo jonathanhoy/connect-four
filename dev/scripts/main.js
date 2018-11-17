@@ -7,7 +7,10 @@ app.columns = {
   d: [],
   e: [],
   f: [],
-  g: []
+  g: [],
+  h: [],
+  i: [],
+  j: []
 }
 app.nextTurn = ['red'];
 
@@ -39,10 +42,12 @@ app.addPiece = function() {
       }
 
       // HORIZONTAL WIN CONDITION
-      if ((i[x][y] === i[x + 1][y] && i[x + 1][y] === i[x + 2][y] && i[x + 2][y] === i[x + 3][y]) || 
-        (i[x - 1][y] === i[x][y] && i[x][y] === i[x + 1][y] && i[x + 1][y] === i[x + 2][y]) || 
-        (i[x - 2][y] === i[x - 1][y] && i[x - 1][y] === i[x][y] && i[x][y] === i[x + 1][y]) ||
-        (i[x - 3][y] === i[x - 2][y] && i[x - 2][y] === i[x - 1][y] && i[x - 1][y] === i[x][y])) {
+      if (
+        (i[x][y] === i[x + 1][y] && i[x][y] === i[x + 2][y] && i[x][y] === i[x + 3][y]) || 
+        (i[x][y] === i[x - 1][y] && i[x][y] === i[x + 1][y] && i[x][y] === i[x + 2][y]) || 
+        (i[x][y] === i[x - 2][y] && i[x][y] === i[x - 1][y] && i[x][y] === i[x + 1][y]) ||
+        (i[x][y] === i[x - 3][y] && i[x][y] === i[x - 2][y] && i[x][y] === i[x - 1][y])
+        ) {
         console.log('HORIZONTAL WINNER');
       }
 
