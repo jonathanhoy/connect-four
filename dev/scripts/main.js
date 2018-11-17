@@ -42,38 +42,26 @@ app.addPiece = function() {
         console.log('VERTICAL WINNER');
       }
 
-      // HORIZONTAL WIN CONDITION
+      // HORIZONTAL/DIAGONAL WIN CONDITION
       // WORKS AS INTENDED
       if (
-        (i[x][y] === i[x + 1][y] && i[x][y] === i[x + 2][y] && i[x][y] === i[x + 3][y]) || 
-        (i[x][y] === i[x - 1][y] && i[x][y] === i[x + 1][y] && i[x][y] === i[x + 2][y]) || 
-        (i[x][y] === i[x - 2][y] && i[x][y] === i[x - 1][y] && i[x][y] === i[x + 1][y]) ||
-        (i[x][y] === i[x - 3][y] && i[x][y] === i[x - 2][y] && i[x][y] === i[x - 1][y])
-        ) {
-        console.log('HORIZONTAL WINNER');
-      }
-
-
-      // DIAGONAL WIN CONDITION
-
-      // DIAGONAL BOTTOM-LEFT TO TOP-RIGHT
-      // WORKS AS INTENDED
-      if (
-        (i[x][y] === i[x + 1][y + 1] && i[x][y] === i[x + 2][y + 2] && i[x][y] === i[x + 3][y + 3]) ||
-        (i[x][y] === i[x - 1][y - 1] && i[x][y] === i[x + 1][y + 1] && i[x][y] === i[x + 2][y + 2]) ||
-        (i[x][y] === i[x - 2][y - 2] && i[x][y] === i[x - 1][y - 1] && i[x][y] === i[x + 1][y + 1]) ||
-        (i[x][y] === i[x - 3][y - 3] && i[x][y] === i[x - 2][y - 2] && i[x][y] === i[x - 1][y - 1])
-        ) {
-          console.log('DIAGONAL WINNER BOTTOM-LEFT TO TOP-RIGHT');
-      }
-      // DIAGONAL TOP-LEFT TO BOTTOM-RIGHT
-      if (
+        // HORIZONTAL WINS
+        (i[x][y] === i[x + 3][y] && i[x][y] === i[x + 2][y] && i[x][y] === i[x + 1][y]) || 
+        (i[x][y] === i[x + 2][y] && i[x][y] === i[x + 1][y] && i[x][y] === i[x - 1][y]) || 
+        (i[x][y] === i[x + 1][y] && i[x][y] === i[x - 1][y] && i[x][y] === i[x - 2][y]) ||
+        (i[x][y] === i[x - 1][y] && i[x][y] === i[x - 2][y] && i[x][y] === i[x - 3][y]) ||
+        // DIAGONAL WINS BOT-LEFT TO TOP-RIGHT
+        (i[x][y] === i[x + 3][y + 3] && i[x][y] === i[x + 2][y + 2] && i[x][y] === i[x + 1][y + 1]) ||
+        (i[x][y] === i[x + 2][y + 2] && i[x][y] === i[x + 1][y + 1] && i[x][y] === i[x - 1][y - 1]) ||
+        (i[x][y] === i[x + 1][y + 1] && i[x][y] === i[x - 1][y - 1] && i[x][y] === i[x - 2][y - 2]) ||
+        (i[x][y] === i[x - 1][y - 1] && i[x][y] === i[x - 2][y - 2] && i[x][y] === i[x - 3][y - 3]) ||
+        // DIAGONAL WINS TOP-LEFT TO BOT-RIGHT
         (i[x][y] === i[x + 3][y - 3] && i[x][y] === i[x + 2][y - 2] && i[x][y] === i[x + 1][y - 1]) ||
         (i[x][y] === i[x + 2][y - 2] && i[x][y] === i[x + 1][y - 1] && i[x][y] === i[x - 1][y + 1]) ||
         (i[x][y] === i[x + 1][y - 1] && i[x][y] === i[x - 1][y + 1] && i[x][y] === i[x - 2][y + 2]) ||
         (i[x][y] === i[x - 1][y + 1] && i[x][y] === i[x - 2][y + 2] && i[x][y] === i[x - 3][y + 3])
         ) {
-          console.log('DIAGONAL WINNER TOP-LEFT TO BOTTOM-RIGHT');
+        console.log('WINNER');
       }
     }
   });
