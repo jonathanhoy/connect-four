@@ -28,7 +28,7 @@ app.addPiece = function() {
       selectedColumn.push(`${color}`);
       app.changeTurn();
 
-      // app.winCondition();
+
 
 
 
@@ -37,11 +37,13 @@ app.addPiece = function() {
       const y = cellNum - 1;
 
       // VERTICAL WIN CONDITION
+      // WORKS AS INTENDED
       if (i[x].length > 1 && i[x][y] === i[x][y - 1] && i[x][y - 1] === i[x][y - 2] && i[x][y - 2] === i[x][y - 3]) {
         console.log('VERTICAL WINNER');
       }
 
       // HORIZONTAL WIN CONDITION
+      // WORKS AS INTENDED
       if (
         (i[x][y] === i[x + 1][y] && i[x][y] === i[x + 2][y] && i[x][y] === i[x + 3][y]) || 
         (i[x][y] === i[x - 1][y] && i[x][y] === i[x + 1][y] && i[x][y] === i[x + 2][y]) || 
@@ -51,24 +53,28 @@ app.addPiece = function() {
         console.log('HORIZONTAL WINNER');
       }
 
+
       // DIAGONAL WIN CONDITION
 
       // DIAGONAL BOTTOM-LEFT TO TOP-RIGHT
+      // WORKS AS INTENDED
       if (
-        (i[x][y] === i[x + 1][y + 1] && i[x + 1][y + 1] === i[x + 2][y + 2] && i[x + 2][y + 2] === i[x + 3][y + 3]) ||
-        (i[x - 1][y - 1] === i[x][y] && i[x][y] === i[x + 1][y + 1] && i[x + 1][y + 1] === i[x + 2][y + 2]) ||
-        (i[x - 2][y - 2] === i[x - 1][y - 1] && i[x - 1][y - 1] === i[x][y] && i[x][y] === i[x + 1][y + 1]) ||
-        (i[x - 3][y - 3] === i[x - 2][y - 2] && i[x - 2][y - 2] === i[x - 1][y - 1] && i[x - 1][y - 1] === i[x][y])) {
-          console.log('DIAGONAL WINNER BOTTOM-LEFT TO TOP-RIGHT')
-        }
+        (i[x][y] === i[x + 1][y + 1] && i[x][y] === i[x + 2][y + 2] && i[x][y] === i[x + 3][y + 3]) ||
+        (i[x][y] === i[x - 1][y - 1] && i[x][y] === i[x + 1][y + 1] && i[x][y] === i[x + 2][y + 2]) ||
+        (i[x][y] === i[x - 2][y - 2] && i[x][y] === i[x - 1][y - 1] && i[x][y] === i[x + 1][y + 1]) ||
+        (i[x][y] === i[x - 3][y - 3] && i[x][y] === i[x - 2][y - 2] && i[x][y] === i[x - 1][y - 1])
+        ) {
+          console.log('DIAGONAL WINNER BOTTOM-LEFT TO TOP-RIGHT');
+      }
       // DIAGONAL TOP-LEFT TO BOTTOM-RIGHT
       if (
-        (i[x][y] === i[x + 1][y - 1] && i[x + 1][y - 1] === i[x + 2][y - 2] && i[x + 2][y - 2] === i[x + 3][y - 3]) ||
-        (i[x - 1][y + 1] === i[x][y] && i[x][y] === i[x + 1][y - 1] && i[x + 1][y - 1] === i[x + 2][y - 2]) ||
-        (i[x - 2][y + 2] === i[x - 1][y + 1] && i[x - 1][y + 1] === i[x][y] && i[x][y] === i[x + 1][y - 1]) ||
-        (i[x - 3][y + 3] === i[x - 2][y + 2] && i[x - 2][y + 2] === i[x - 1][y + 1] && i[x - 1][y + 1] === i[x][y])) {
+        (i[x][y] === i[x + 3][y - 3] && i[x][y] === i[x + 2][y - 2] && i[x][y] === i[x + 1][y - 1]) ||
+        (i[x][y] === i[x + 2][y - 2] && i[x][y] === i[x + 1][y - 1] && i[x][y] === i[x - 1][y + 1]) ||
+        (i[x][y] === i[x + 1][y - 1] && i[x][y] === i[x - 1][y + 1] && i[x][y] === i[x - 2][y + 2]) ||
+        (i[x][y] === i[x - 1][y + 1] && i[x][y] === i[x - 2][y + 2] && i[x][y] === i[x - 3][y + 3])
+        ) {
           console.log('DIAGONAL WINNER TOP-LEFT TO BOTTOM-RIGHT');
-        }
+      }
     }
   });
 }
