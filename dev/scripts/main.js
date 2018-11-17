@@ -8,7 +8,7 @@ app.columns = {
   e: [],
   f: [],
   g: [],
-  h: [],
+  h: [], // h, i, and j are extra columns used solely for checkWin function.
   i: [],
   j: []
 }
@@ -38,28 +38,30 @@ app.addPiece = function() {
 
       // VERTICAL WIN CONDITION
       // WORKS AS INTENDED
-      if (i[x].length > 1 && i[x][y] === i[x][y - 1] && i[x][y - 1] === i[x][y - 2] && i[x][y - 2] === i[x][y - 3]) {
-        console.log('VERTICAL WINNER');
-      }
+      // if (i[x][y] === i[x][y - 1] && i[x][y] === i[x][y - 2] && i[x][y] === i[x][y - 3]) {
+      //   console.log('VERTICAL WINNER');
+      // }
 
       // HORIZONTAL/DIAGONAL WIN CONDITION
       // WORKS AS INTENDED
       if (
-        // HORIZONTAL WINS
-        (i[x][y] === i[x + 3][y] && i[x][y] === i[x + 2][y] && i[x][y] === i[x + 1][y]) || 
-        (i[x][y] === i[x + 2][y] && i[x][y] === i[x + 1][y] && i[x][y] === i[x - 1][y]) || 
-        (i[x][y] === i[x + 1][y] && i[x][y] === i[x - 1][y] && i[x][y] === i[x - 2][y]) ||
-        (i[x][y] === i[x - 1][y] && i[x][y] === i[x - 2][y] && i[x][y] === i[x - 3][y]) ||
+        // DIAGONAL WINS TOP-LEFT TO BOT-RIGHT
+        (i[x][y] === i[x + 3][y - 3] && i[x][y] === i[x + 2][y - 2] && i[x][y] === i[x + 1][y - 1]) ||
+        (i[x][y] === i[x + 2][y - 2] && i[x][y] === i[x + 1][y - 1] && i[x][y] === i[x - 1][y + 1]) ||
+        (i[x][y] === i[x + 1][y - 1] && i[x][y] === i[x - 1][y + 1] && i[x][y] === i[x - 2][y + 2]) ||
+        (i[x][y] === i[x - 1][y + 1] && i[x][y] === i[x - 2][y + 2] && i[x][y] === i[x - 3][y + 3]) ||
         // DIAGONAL WINS BOT-LEFT TO TOP-RIGHT
         (i[x][y] === i[x + 3][y + 3] && i[x][y] === i[x + 2][y + 2] && i[x][y] === i[x + 1][y + 1]) ||
         (i[x][y] === i[x + 2][y + 2] && i[x][y] === i[x + 1][y + 1] && i[x][y] === i[x - 1][y - 1]) ||
         (i[x][y] === i[x + 1][y + 1] && i[x][y] === i[x - 1][y - 1] && i[x][y] === i[x - 2][y - 2]) ||
         (i[x][y] === i[x - 1][y - 1] && i[x][y] === i[x - 2][y - 2] && i[x][y] === i[x - 3][y - 3]) ||
-        // DIAGONAL WINS TOP-LEFT TO BOT-RIGHT
-        (i[x][y] === i[x + 3][y - 3] && i[x][y] === i[x + 2][y - 2] && i[x][y] === i[x + 1][y - 1]) ||
-        (i[x][y] === i[x + 2][y - 2] && i[x][y] === i[x + 1][y - 1] && i[x][y] === i[x - 1][y + 1]) ||
-        (i[x][y] === i[x + 1][y - 1] && i[x][y] === i[x - 1][y + 1] && i[x][y] === i[x - 2][y + 2]) ||
-        (i[x][y] === i[x - 1][y + 1] && i[x][y] === i[x - 2][y + 2] && i[x][y] === i[x - 3][y + 3])
+        // HORIZONTAL WINS
+        (i[x][y] === i[x + 3][y] && i[x][y] === i[x + 2][y] && i[x][y] === i[x + 1][y]) || 
+        (i[x][y] === i[x + 2][y] && i[x][y] === i[x + 1][y] && i[x][y] === i[x - 1][y]) || 
+        (i[x][y] === i[x + 1][y] && i[x][y] === i[x - 1][y] && i[x][y] === i[x - 2][y]) ||
+        (i[x][y] === i[x - 1][y] && i[x][y] === i[x - 2][y] && i[x][y] === i[x - 3][y]) ||
+        // VERTICAL WINS
+        (i[x][y] === i[x][y - 1] && i[x][y] === i[x][y - 2] && i[x][y] === i[x][y - 3])
         ) {
         console.log('WINNER');
       }
@@ -80,12 +82,6 @@ app.changeTurn = function() {
 };
 
 app.winCondition = function() {
-  // const counter = Object.values(app.columns);
-  // let i = cellNum - 1;
-  // const j = $(this).data("array");
-  // if (counter[j].length > 1 && counter[j][i] === counter[j][i - 1] && counter[j][i - 1] === counter[j][i - 2] && counter[j][i - 2] === counter[j][i - 3]) {
-  //   alert('winner');
-  // }
 }
 
 app.init = function() {
