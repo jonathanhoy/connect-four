@@ -14,7 +14,6 @@ app.columns = {
 }
 app.nextTurn = ['red'];
 
-// CLICK ON COLUMN TO ADD PIECE
 app.addPiece = function() {
   $('.column').on('click', function () {
     const index = $(this).data("column");
@@ -35,7 +34,6 @@ app.addPiece = function() {
   });
 }
 
-// CHECK WHOSE TURN AND UPDATE TURN ORDER
 app.changeTurn = function() {
   const currentColor = app.nextTurn[app.nextTurn.length - 1];
   if (currentColor === 'red') {
@@ -96,16 +94,22 @@ app.checkForOtherWins = function(i, x, y, color) {
 
 app.alertWin = function(color) {
   color = color.charAt(0).toUpperCase() + color.slice(1);
-  swal({
-    title: `Congratulations ${color} player!`,
-    text: `Winner winner chicken dinner 🍗🍗🍗`
-  });
+  window.setTimeout(function() {
+    swal({
+      title: `Congratulations ${color} player!`,
+      text: `Winner winner chicken dinner 🍗🍗🍗`
+    });
+  }, 650);
 }
   
 
 app.init = function() {
   app.addPiece();
 }
+
+$('.column').hover(function() {
+  $(this).toggleClass('mouseover');
+});
 
 // DOCUMENT READY
 $(function() {

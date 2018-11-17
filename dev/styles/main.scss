@@ -1,7 +1,33 @@
 @import 'setup';
 
-h1, h2 {
+// font-family: 'Comfortaa', cursive;
+// font-family: 'Open Sans', sans-serif;
+
+$bodyColor: #FAF0E6; // linen
+$titleColor: #F77683; // pink
+$backgroundColor: #6495ED; // cornflowerblue
+$yellowMarker: #ffed66;
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+h1 {
   text-align: center;
+  font-family: 'Comfortaa', cursive;
+  font-weight: 700;
+  color: #F77683;
+  font-family: 'Comfortaa';
+  text-shadow: -.030em .030em #FFF6E6, -.08em .08em #E7DCD7;
+  font-size: 5rem;
+}
+
+body {
+  background-color: #FAF0E6;
 }
 
 .board-container {
@@ -14,6 +40,7 @@ h1, h2 {
   display: inline-grid;
   grid-template-columns: repeat(7, 70px);
   border: 5px solid black;
+  border-radius: 10px;
   padding: 10px;
   background: cornflowerblue;
 }
@@ -23,6 +50,11 @@ h1, h2 {
   flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
+  border-radius: 10px;
+}
+
+.column.mouseover {
+  background-color: rgba(33,33,33,0.2);
 }
 
 .cell {
@@ -38,11 +70,11 @@ h1, h2 {
 }
 
 .red {
-  background-color: red;
+  background-color: tomato;
 }
 
 .yellow {
-  background-color: yellow;
+  background-color: $yellowMarker;
 }
 
 .piece {
@@ -58,8 +90,19 @@ h1, h2 {
 }
 
 .swal-modal {
-  background-color: white;
+  background-color: $bodyColor;
   border: 5px solid black;
-  border-radius: 0;
+  border-radius: 10px;
 }
 
+.swal-button {
+  padding: 7px 19px;
+  background-color: cornflowerblue;
+  font-size: 12px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+footer {
+
+}
