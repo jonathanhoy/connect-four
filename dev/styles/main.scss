@@ -1,12 +1,13 @@
 @import 'setup';
 
-// font-family: 'Comfortaa', cursive;
-// font-family: 'Open Sans', sans-serif;
+// font-family: 'Comfortaa', sans-serif;
 
 $bodyColor: #FAF0E6; // linen
 $titleColor: #F77683; // pink
-$backgroundColor: #6495ED; // cornflowerblue
-$yellowMarker: #ffed66;
+$boardColor: #6495ED; // cornflowerblue
+$highlightColor: #78cbf2;
+$yellowMarker: #f8e281;
+$redMarker: #ff6347;
 
 html {
   font-size: 62.5%;
@@ -14,20 +15,38 @@ html {
 
 body {
   font-size: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: 'Comfortaa', sans-serif;
+}
+
+img {
+  max-width: 100%;
 }
 
 h1 {
   text-align: center;
-  font-family: 'Comfortaa', cursive;
   font-weight: 700;
-  color: #F77683;
-  font-family: 'Comfortaa';
+  color: $titleColor;
   text-shadow: -.030em .030em #FFF6E6, -.08em .08em #E7DCD7;
   font-size: 5rem;
+  margin-top: 0;
+}
+
+p {
+  text-align: center;
 }
 
 body {
-  background-color: #FAF0E6;
+  background-color: $bodyColor;
+  height: 100vh;
+}
+
+.wrapper {
+  max-width: 1280px;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .board-container {
@@ -42,7 +61,8 @@ body {
   border: 5px solid black;
   border-radius: 10px;
   padding: 10px;
-  background: cornflowerblue;
+  background: $boardColor;
+  box-shadow: -5px 5px 10px 0px rgba(0,0,0,0.19);
 }
 
 .column {
@@ -53,7 +73,7 @@ body {
   border-radius: 10px;
 }
 
-.column.mouseover {
+.mouseover {
   background-color: rgba(33,33,33,0.2);
 }
 
@@ -70,7 +90,7 @@ body {
 }
 
 .red {
-  background-color: tomato;
+  background-color: $redMarker;
 }
 
 .yellow {
@@ -82,7 +102,35 @@ body {
   width: 50px;
   border-radius: 50%;
   border: 2px solid black;
+  box-shadow: -5px 5px 10px 0px rgba(0,0,0,0.19);
 }
+
+.instructions-button {
+  margin-top: 15px;
+  color: white;
+}
+
+.instructions-pop-out-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(33,33,33,0.7);
+}
+
+.instructions-pop-out {
+  background: $bodyColor;
+  position: absolute;
+  top: 5%;
+  bottom: 5%;
+  left: 5%;
+  right: 5%;
+}
+
+
+
+
 
 
 .swal-overlay {
@@ -95,14 +143,19 @@ body {
   border-radius: 10px;
 }
 
-.swal-button {
+.swal-button, .instructions-button {
   padding: 7px 19px;
-  background-color: cornflowerblue;
+  background-color: $boardColor;
   font-size: 12px;
   border: 1px solid black;
   border-radius: 5px;
+  box-shadow: -5px 5px 10px 0px rgba(0,0,0,0.19);
+}
+
+.swal-button:hover, .instructions-button:hover {
+  background-color: $highlightColor;
 }
 
 footer {
-
+  
 }

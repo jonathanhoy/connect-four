@@ -5,77 +5,94 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Connect Four</title>
+	<link rel="shortcut icon" type="image/png" href="public/assets/favicon.png" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-	<link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700|Open+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700" rel="stylesheet">
 	<link rel="stylesheet" href="public/styles/style.css">
 </head>
 <body>
+	<div class="wrapper">
+		<header>
+			<button class="instructions-button">How to play</button>
+			<div class="instructions-pop-out-container">
+				<div class="instructions-pop-out">
+					<h2>How to play</h2>
+					<p>Players take turns placing markers on the board trying to connect 4 markers! Markers can match horizontally, vertically, or diagonally.</p>
+					<div class="instructions-images">
+						<img src="public/assets/ins-horizontal.png" alt="A sample image of four horizontal markers." class="instructions-image">
+						<img src="public/assets/ins-vertical.png" alt="A sample image of four vertical markers." class="instructions-image">
+						<img src="public/assets/ins-diagonal1.png" alt="A sample image of four diagonal markers" class="instructions-image">
+						<img src="public/assets/ins-diagonal2.png" alt="A sample image of four diagonal markers" class="instructions-image">
+					</div>
+				</div>
+			</div>
+			<h1>Connect Four</h1>
+		</header>
 
-	<h1>Connect Four</h1>
-
-	<section class="board-container">
-		<div class="board">
-			<div class="column column-a" data-column="a" data-array="0">
-				<div class="cell cell-1"></div>
-				<div class="cell cell-2"></div>
-				<div class="cell cell-3"></div>
-				<div class="cell cell-4"></div>
-				<div class="cell cell-5"></div>
-				<div class="cell cell-6"></div>
+		<section class="board-container">
+			<div class="board">
+				<div class="column column-a" data-column="a" data-array="0">
+					<div class="cell cell-1"></div>
+					<div class="cell cell-2"></div>
+					<div class="cell cell-3"></div>
+					<div class="cell cell-4"></div>
+					<div class="cell cell-5"></div>
+					<div class="cell cell-6"></div>
+				</div>
+				<div class="column column-b" data-column="b" data-array="1">
+					<div class="cell cell-1"></div>
+					<div class="cell cell-2"></div>
+					<div class="cell cell-3"></div>
+					<div class="cell cell-4"></div>
+					<div class="cell cell-5"></div>
+					<div class="cell cell-6"></div>
+				</div>
+				<div class="column column-c" data-column="c" data-array="2">
+					<div class="cell cell-1"></div>
+					<div class="cell cell-2"></div>
+					<div class="cell cell-3"></div>
+					<div class="cell cell-4"></div>
+					<div class="cell cell-5"></div>
+					<div class="cell cell-6"></div>
+				</div>
+				<div class="column column-d" data-column="d" data-array="3">
+					<div class="cell cell-1"></div>
+					<div class="cell cell-2"></div>
+					<div class="cell cell-3"></dIv>
+					<div class="cell cell-4"></div>
+					<div class="cell cell-5"></div>
+					<div class="cell cell-6"></div>
+				</div>
+				<div class="column column-e" data-column="e" data-array="4">
+					<div class="cell cell-1"></div>
+					<div class="cell cell-2"></div>
+					<div class="cell cell-3"></div>
+					<div class="cell cell-4"></div>
+					<div class="cell cell-5"></div>
+					<div class="cell cell-6"></div>
+				</div>
+				<div class="column column-f" data-column="f" data-array="5">
+					<div class="cell cell-1"></div>
+					<div class="cell cell-2"></div>
+					<div class="cell cell-3"></div>
+					<div class="cell cell-4"></div>
+					<div class="cell cell-5"></div>
+					<div class="cell cell-6"></div>
+				</div>
+				<div class="column column-g" data-column="g" data-array="6">
+					<div class="cell cell-1"></div>
+					<div class="cell cell-2"></div>
+					<div class="cell cell-3"></div>
+					<div class="cell cell-4"></div>
+					<div class="cell cell-5"></div>
+					<div class="cell cell-6"></div>
+				</div>
 			</div>
-			<div class="column column-b" data-column="b" data-array="1">
-				<div class="cell cell-1"></div>
-				<div class="cell cell-2"></div>
-				<div class="cell cell-3"></div>
-				<div class="cell cell-4"></div>
-				<div class="cell cell-5"></div>
-				<div class="cell cell-6"></div>
-			</div>
-			<div class="column column-c" data-column="c" data-array="2">
-				<div class="cell cell-1"></div>
-				<div class="cell cell-2"></div>
-				<div class="cell cell-3"></div>
-				<div class="cell cell-4"></div>
-				<div class="cell cell-5"></div>
-				<div class="cell cell-6"></div>
-			</div>
-			<div class="column column-d" data-column="d" data-array="3">
-				<div class="cell cell-1"></div>
-				<div class="cell cell-2"></div>
-				<div class="cell cell-3"></dIv>
-				<div class="cell cell-4"></div>
-				<div class="cell cell-5"></div>
-				<div class="cell cell-6"></div>
-			</div>
-			<div class="column column-e" data-column="e" data-array="4">
-				<div class="cell cell-1"></div>
-				<div class="cell cell-2"></div>
-				<div class="cell cell-3"></div>
-				<div class="cell cell-4"></div>
-				<div class="cell cell-5"></div>
-				<div class="cell cell-6"></div>
-			</div>
-			<div class="column column-f" data-column="f" data-array="5">
-				<div class="cell cell-1"></div>
-				<div class="cell cell-2"></div>
-				<div class="cell cell-3"></div>
-				<div class="cell cell-4"></div>
-				<div class="cell cell-5"></div>
-				<div class="cell cell-6"></div>
-			</div>
-			<div class="column column-g" data-column="g" data-array="6">
-				<div class="cell cell-1"></div>
-				<div class="cell cell-2"></div>
-				<div class="cell cell-3"></div>
-				<div class="cell cell-4"></div>
-				<div class="cell cell-5"></div>
-				<div class="cell cell-6"></div>
-			</div>
-		</div>
-	</section>
-	<section class="player-turn">
-		<p>Hey <span class="turn-indicator">Red</span> player, it's your turn!</p>
-	</section>
+		</section>
+		<section class="player-turn">
+			<p>Hey <span class="turn-indicator">Red</span> player, it's your turn!</p>
+		</section>
+	</div>
 	<footer>
 		<p>Copyright &copy; Jonathan, 2018</p>
 	</footer>

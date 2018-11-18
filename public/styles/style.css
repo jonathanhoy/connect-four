@@ -135,19 +135,41 @@ html {
   font-size: 62.5%; }
 
 body {
-  font-size: 1.6rem; }
+  font-size: 1.6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-family: 'Comfortaa', sans-serif; }
+
+img {
+  max-width: 100%; }
 
 h1 {
   text-align: center;
-  font-family: 'Comfortaa', cursive;
   font-weight: 700;
   color: #F77683;
-  font-family: 'Comfortaa';
   text-shadow: -.030em .030em #FFF6E6, -.08em .08em #E7DCD7;
-  font-size: 5rem; }
+  font-size: 5rem;
+  margin-top: 0; }
+
+p {
+  text-align: center; }
 
 body {
-  background-color: #FAF0E6; }
+  background-color: #FAF0E6;
+  height: 100vh; }
+
+.wrapper {
+  max-width: 1280px;
+  width: 90%;
+  margin: 0 auto; }
 
 .board-container {
   display: -webkit-box;
@@ -166,7 +188,9 @@ body {
   border: 5px solid black;
   border-radius: 10px;
   padding: 10px;
-  background: cornflowerblue; }
+  background: #6495ED;
+  -webkit-box-shadow: -5px 5px 10px 0px rgba(0, 0, 0, 0.19);
+          box-shadow: -5px 5px 10px 0px rgba(0, 0, 0, 0.19); }
 
 .column {
   display: -webkit-box;
@@ -184,7 +208,7 @@ body {
           align-items: center;
   border-radius: 10px; }
 
-.column.mouseover {
+.mouseover {
   background-color: rgba(33, 33, 33, 0.2); }
 
 .cell {
@@ -205,16 +229,38 @@ body {
   align-items: center; }
 
 .red {
-  background-color: tomato; }
+  background-color: #ff6347; }
 
 .yellow {
-  background-color: #ffed66; }
+  background-color: #f8e281; }
 
 .piece {
   height: 50px;
   width: 50px;
   border-radius: 50%;
-  border: 2px solid black; }
+  border: 2px solid black;
+  -webkit-box-shadow: -5px 5px 10px 0px rgba(0, 0, 0, 0.19);
+          box-shadow: -5px 5px 10px 0px rgba(0, 0, 0, 0.19); }
+
+.instructions-button {
+  margin-top: 15px;
+  color: white; }
+
+.instructions-pop-out-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(33, 33, 33, 0.7); }
+
+.instructions-pop-out {
+  background: #FAF0E6;
+  position: absolute;
+  top: 5%;
+  bottom: 5%;
+  left: 5%;
+  right: 5%; }
 
 .swal-overlay {
   background-color: rgba(33, 33, 33, 0.7); }
@@ -224,9 +270,14 @@ body {
   border: 5px solid black;
   border-radius: 10px; }
 
-.swal-button {
+.swal-button, .instructions-button {
   padding: 7px 19px;
-  background-color: cornflowerblue;
+  background-color: #6495ED;
   font-size: 12px;
   border: 1px solid black;
-  border-radius: 5px; }
+  border-radius: 5px;
+  -webkit-box-shadow: -5px 5px 10px 0px rgba(0, 0, 0, 0.19);
+          box-shadow: -5px 5px 10px 0px rgba(0, 0, 0, 0.19); }
+
+.swal-button:hover, .instructions-button:hover {
+  background-color: #78cbf2; }
