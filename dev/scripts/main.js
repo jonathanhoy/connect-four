@@ -20,7 +20,9 @@ app.addPiece = function() {
     const index = $(this).data("column");
     const selectedColumn = app.columns[`${index}`];
     if (selectedColumn.length === 6) {
-      swal('Invalid move!');
+      swal({
+        title: 'Invalid move! 🙅🏻‍♂️'
+      });
     } else if (selectedColumn.length < 6) {
       const color = app.nextTurn[app.nextTurn.length - 1];
       const cellNum = selectedColumn.length + 1;
@@ -37,7 +39,7 @@ app.addPiece = function() {
 app.placeMarker = function(index, cellNum, color, selectedColumn) {
   app.randomColor = app.chaosColors[Math.floor(Math.random() * app.chaosColors.length) + 1];
   if (app.chaosMode === true) {
-    $(`.column-${index} .cell-${cellNum}`).append(`<div class="piece"></div>`).css('background-color', `${app.randomColor}`);
+    $(`.column-${index} .cell-${cellNum}`).append(`<div class="piece animated jello"></div>`).css('background-color', `${app.randomColor}`);
   } else {
     $(`.column-${index} .cell-${cellNum}`).append(`<div class="piece ${color} animated fadeInDownBig faster"></div>`);
   }
@@ -128,24 +130,9 @@ app.alertWin = function(color) {
 }
 
 
-$('.play-again-button').on('click', function() {
-  app.columns = {
-    a: [],
-    b: [],
-    c: [],
-    d: [],
-    e: [],
-    f: [],
-    g: [],
-    h: [],
-    i: [],
-    j: []
-  }
-  $('.piece').remove();
-})
 
 
-  
+
 // EVENT LISTENERS
 $('.column').hover(function() {
   $(this).toggleClass('mouseover');
@@ -166,9 +153,21 @@ $('.instructions-exit').on('click', function() {
   $('.instructions-pop-out-container').hide();
 })
 
-
-
-
+$('.play-again-button').on('click', function() {
+  app.columns = {
+    a: [],
+    b: [],
+    c: [],
+    d: [],
+    e: [],
+    f: [],
+    g: [],
+    h: [],
+    i: [],
+    j: []
+  }
+  $('.piece').remove();
+})
 
 // CHAOS MODE
 app.allowedKeys = {

@@ -16,12 +16,14 @@
 <body>
 	<div class="wrapper">
 		<header>
-			<button class="instructions-button">How to play</button>
-			<button class="play-again-button">Play again</button>
+			<nav>
+				<button class="instructions-button">How to play</button>
+				<button class="play-again-button">Play again</button>
+			</nav>
 			<div class="instructions-pop-out-container hidden">
 				<div class="instructions-pop-out">
 					<div class="instructions-wrapper">
-						<h2>How to play</h2>
+						<h2 class="instructions-title">How to play</h2>
 						<p>Two players take turns placing markers on the board trying to connect 4 markers in a row!</p>
 						<p>Markers can match horizontally, vertically, or diagonally.</p>
 						<div class="instructions-images-carousel">
@@ -98,7 +100,7 @@
 			</div>
 		</section>
 		<section class="player-turn">
-			<p class="player-turn-copy">Hey <span class="turn-indicator">Red</span> player, it's your turn!</p>
+			<p class="player-turn-text">Hey <span class="turn-indicator">Red</span> player, it's your turn!</p>
 		</section>
 	</div>
 	<footer>

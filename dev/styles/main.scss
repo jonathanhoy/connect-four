@@ -9,9 +9,6 @@ $highlightColor: #78cbf2;
 $yellowMarker: #f8e281;
 $redMarker: #ff6347;
 
-:root {
-  --chaosColor: red;
-}
 
 html {
   font-size: 62.5%;
@@ -30,7 +27,7 @@ img {
   display: block;
 }
 
-.main-title {
+.main-title, .instructions-title {
   text-align: center;
   font-weight: 700;
   color: $titleColor;
@@ -39,7 +36,12 @@ img {
   margin-top: 0;
 }
 
-.player-turn-copy {
+.instructions-title {
+  margin: 15px 0;
+  font-size: 4rem;
+}
+
+.player-turn-text {
   font-size: 3rem;
 }
 
@@ -107,10 +109,6 @@ body {
   background-color: $yellowMarker;
 }
 
-.chaos {
-  background-color: var(--chaosColor);
-}
-
 .piece {
   height: 50px;
   width: 50px;
@@ -122,9 +120,8 @@ body {
 
 
 
-
-.instructions-button {
-  margin-top: 15px;
+.instructions-button, .play-again-button {
+  margin: 15px 15px 15px 0;
   color: white;
 }
 
@@ -184,6 +181,7 @@ body {
   position: absolute;
   top: 10px;
   left: 10px;
+  font-size: 2rem;
 }
 
 
