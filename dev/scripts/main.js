@@ -13,7 +13,7 @@ app.columns = {
   j: []
 }
 app.nextTurn = ['red'];
-app.chaosColors = ["AliceBlue", "AntiqueWhite", "Aqua", "Aquamarine", "Azure", "Beige", "Bisque", "Black", "BlanchedAlmond", "Blue", "BlueViolet", "Brown", "BurlyWood", "CadetBlue", "Chartreuse", "Chocolate", "Coral", "CornflowerBlue", "Cornsilk", "Crimson", "Cyan", "DarkBlue", "DarkCyan", "DarkGoldenRod", "DarkGray", "DarkGrey", "DarkGreen", "DarkKhaki", "DarkMagenta", "DarkOliveGreen", "Darkorange", "DarkOrchid", "DarkRed", "DarkSalmon", "DarkSeaGreen", "DarkSlateBlue", "DarkSlateGray", "DarkSlateGrey", "DarkTurquoise", "DarkViolet", "DeepPink", "DeepSkyBlue", "DimGray", "DimGrey", "DodgerBlue", "FireBrick", "FloralWhite", "ForestGreen", "Fuchsia", "Gainsboro", "GhostWhite", "Gold", "GoldenRod", "Gray", "Grey", "Green", "GreenYellow", "HoneyDew", "HotPink", "IndianRed", "Indigo", "Ivory", "Khaki", "Lavender", "LavenderBlush", "LawnGreen", "LemonChiffon", "LightBlue", "LightCoral", "LightCyan", "LightGoldenRodYellow", "LightGray", "LightGrey", "LightGreen", "LightPink", "LightSalmon", "LightSeaGreen", "LightSkyBlue", "LightSlateGray", "LightSlateGrey", "LightSteelBlue", "LightYellow", "Lime", "LimeGreen", "Linen", "Magenta", "Maroon", "MediumAquaMarine", "MediumBlue", "MediumOrchid", "MediumPurple", "MediumSeaGreen", "MediumSlateBlue", "MediumSpringGreen", "MediumTurquoise", "MediumVioletRed", "MidnightBlue", "MintCream", "MistyRose", "Moccasin", "NavajoWhite", "Navy", "OldLace", "Olive", "OliveDrab", "Orange", "OrangeRed", "Orchid", "PaleGoldenRod", "PaleGreen", "PaleTurquoise", "PaleVioletRed", "PapayaWhip", "PeachPuff", "Peru", "Pink", "Plum", "PowderBlue", "Purple", "Red", "RosyBrown", "RoyalBlue", "SaddleBrown", "Salmon", "SandyBrown", "SeaGreen", "SeaShell", "Sienna", "Silver", "SkyBlue", "SlateBlue", "SlateGray", "SlateGrey", "Snow", "SpringGreen", "SteelBlue", "Tan", "Teal", "Thistle", "Tomato", "Turquoise", "Violet", "Wheat", "White", "WhiteSmoke", "Yellow", "YellowGreen"];
+app.chaosColors = ["AliceBlue", "AntiqueWhite", "Aqua", "Aquamarine", "Azure", "Beige", "Bisque", "Black", "BlanchedAlmond", "Blue", "BlueViolet", "Brown", "BurlyWood", "CadetBlue", "Chartreuse", "Chocolate", "Coral", "CornflowerBlue", "Cornsilk", "Crimson", "Cyan", "DarkBlue", "DarkCyan", "DarkGoldenRod", "DarkGray", "DarkGrey", "DarkGreen", "DarkKhaki", "DarkMagenta", "DarkOliveGreen", "Darkorange", "DarkOrchid", "DarkRed", "DarkSalmon", "DarkSeaGreen", "DarkSlateBlue", "DarkSlateGray", "DarkSlateGrey", "DarkTurquoise", "DarkViolet", "DeepPink", "DeepSkyBlue", "DimGray", "DimGrey", "DodgerBlue", "FireBrick", "FloralWhite", "ForestGreen", "Fuchsia", "Gainsboro", "GhostWhite", "Gold", "GoldenRod", "Gray", "Grey", "Green", "GreenYellow", "HoneyDew", "HotPink", "IndianRed", "Indigo", "Ivory", "Khaki", "Lavender", "LavenderBlush", "LawnGreen", "LemonChiffon", "LightBlue", "LightCoral", "LightCyan", "LightGoldenRodYellow", "LightGray", "LightGrey", "LightGreen", "LightPink", "LightSalmon", "LightSeaGreen", "LightSkyBlue", "LightSlateGray", "LightSlateGrey", "LightSteelBlue", "LightYellow", "Lime", "LimeGreen", "Linen", "Magenta", "Maroon", "MediumAquaMarine", "MediumBlue", "MediumOrchid", "MediumPurple", "MediumSeaGreen", "MediumSlateBlue", "MediumSpringGreen", "MediumTurquoise", "MediumVioletRed", "MidnightBlue", "MintCream", "MistyRose", "Moccasin", "NavajoWhite", "Navy", "OldLace", "Olive", "OliveDrab", "Orange", "OrangeRed", "Orchid", "PaleGoldenRod", "PaleGreen", "PaleTurquoise", "PaleVioletRed", "PapayaWhip", "PeachPuff", "Peru", "Pink", "Plum", "PowderBlue", "Purple", "RebeccaPurple", "Red", "RosyBrown", "RoyalBlue", "SaddleBrown", "Salmon", "SandyBrown", "SeaGreen", "SeaShell", "Sienna", "Silver", "SkyBlue", "SlateBlue", "SlateGray", "SlateGrey", "Snow", "SpringGreen", "SteelBlue", "Tan", "Teal", "Thistle", "Tomato", "Turquoise", "Violet", "Wheat", "White", "WhiteSmoke", "Yellow", "YellowGreen"];
 
 app.addPiece = function() {
   $('.column').on('click', function () {
@@ -35,9 +35,9 @@ app.addPiece = function() {
 }
 
 app.placeMarker = function(index, cellNum, color, selectedColumn) {
-  const randomColor = app.chaosColors[Math.floor(Math.random() * app.chaosColors.length) + 1];
+  app.randomColor = app.chaosColors[Math.floor(Math.random() * app.chaosColors.length) + 1];
   if (app.chaosMode === true) {
-    $(`.column-${index} .cell-${cellNum}`).css('background-color', `${randomColor}`).append(`<div class="piece animated fadeInDownBig faster"></div>`);
+    $(`.column-${index} .cell-${cellNum}`).append(`<div class="piece"></div>`).css('background-color', `${app.randomColor}`);
   } else {
     $(`.column-${index} .cell-${cellNum}`).append(`<div class="piece ${color} animated fadeInDownBig faster"></div>`);
   }
@@ -60,6 +60,7 @@ app.checkForWin = function(i, x, y, color) {
   app.checkForHorizontalWin(i, x, y, color);
   app.checkForDiagonalWin(i, x, y, color);
   app.checkForOtherWins(i, x, y, color);
+  app.tieGame(i, x);
 }
 
 app.checkForVerticalWin = function(i, x, y, color) {
@@ -102,15 +103,48 @@ app.checkForOtherWins = function(i, x, y, color) {
   }
 }
 
+app.tieGame = function(i, x) {
+  if (
+    i[x].length === 6 &&
+    i[x + 1].length === 6 &&
+    i[x + 2].length === 6 &&
+    i[x + 3].length === 6 &&
+    i[x + 4].length === 6 &&
+    i[x + 5].length === 6 &&
+    i[x + 6].length === 6
+    ) {
+    console.log('tie game')
+  }
+}
+
 app.alertWin = function(color) {
   color = color.charAt(0).toUpperCase() + color.slice(1);
   window.setTimeout(function() {
     swal({
       title: `Congratulations ${color} player!`,
-      text: `Winner winner chicken dinner 🍗🍗🍗`
+      text: `Winner Winner Chicken Dinner 🍗🍗🍗🍗`
     });
   }, 650);
 }
+
+
+$('.play-again-button').on('click', function() {
+  app.columns = {
+    a: [],
+    b: [],
+    c: [],
+    d: [],
+    e: [],
+    f: [],
+    g: [],
+    h: [],
+    i: [],
+    j: []
+  }
+  $('.piece').remove();
+})
+
+
   
 // EVENT LISTENERS
 $('.column').hover(function() {
@@ -132,7 +166,11 @@ $('.instructions-exit').on('click', function() {
   $('.instructions-pop-out-container').hide();
 })
 
-// KONAMI CODE
+
+
+
+
+// CHAOS MODE
 app.allowedKeys = {
   76: 'l',
   73: 'i',
@@ -144,6 +182,7 @@ app.allowedKeys = {
   65: 'a',
   79: 'o'
 };
+
 app.konamiCode = ['l', 'i', 'f', 'e', 'i', 's', 'c', 'h', 'a', 'o', 's'];
 app.konamiCodePosition = 0;
 app.chaosMode = false;
@@ -155,14 +194,24 @@ document.addEventListener('keydown', function(e) {
     if (app.konamiCodePosition === app.konamiCode.length) {
       app.chaosMode = true;
       app.konamiCodePosition = 0;
-      swal('LIFE IS CHAOS');
+      const text = 'life is chaos 😈'.toUpperCase();
+      swal({
+        title: text,
+      });
+      app.chaosTitle();
     }
   } else {
     app.konamiCodePosition = 0;
   }
 })
-
-
+app.chaosTitle = function() {
+  setInterval(function () {
+    const random = (app.chaosColors[Math.floor(Math.random() * app.chaosColors.length) + 1]).toString();
+    const text = ('life is chaos').toUpperCase();
+    $('.main-title').text(`${text}`);
+    $('.main-title').css('color', `${random}`);
+  }, 75)
+}
 
 // INIT
 app.init = function() {

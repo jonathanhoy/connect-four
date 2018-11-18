@@ -131,6 +131,9 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
+:root {
+  --chaosColor: red; }
+
 html {
   font-size: 62.5%; }
 
@@ -152,13 +155,16 @@ img {
   max-width: 100%;
   display: block; }
 
-h1 {
+.main-title {
   text-align: center;
   font-weight: 700;
   color: #F77683;
   text-shadow: -.030em .030em #FFF6E6, -.08em .08em #E7DCD7;
   font-size: 5rem;
   margin-top: 0; }
+
+.player-turn-copy {
+  font-size: 3rem; }
 
 h2, p {
   text-align: center; }
@@ -235,6 +241,9 @@ body {
 .yellow {
   background-color: #f8e281; }
 
+.chaos {
+  background-color: var(--chaosColor); }
+
 .piece {
   height: 50px;
   width: 50px;
@@ -304,16 +313,16 @@ body {
   border: 5px solid black;
   border-radius: 10px; }
 
-.swal-button, .instructions-button {
+.swal-button, .instructions-button, .play-again-button {
   padding: 7px 19px;
   background-color: #6495ED;
-  font-size: 12px;
+  font-size: 1.6rem;
   border: 1px solid black;
   border-radius: 5px;
   -webkit-box-shadow: -5px 5px 10px 0px rgba(0, 0, 0, 0.19);
           box-shadow: -5px 5px 10px 0px rgba(0, 0, 0, 0.19); }
 
-.swal-button:hover, .instructions-button:hover {
+.swal-button:hover, .instructions-button:hover, .play-again-button:hover {
   background-color: #78cbf2; }
 
 footer a {

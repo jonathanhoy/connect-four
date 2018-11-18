@@ -9,6 +9,10 @@ $highlightColor: #78cbf2;
 $yellowMarker: #f8e281;
 $redMarker: #ff6347;
 
+:root {
+  --chaosColor: red;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -26,7 +30,7 @@ img {
   display: block;
 }
 
-h1 {
+.main-title {
   text-align: center;
   font-weight: 700;
   color: $titleColor;
@@ -34,6 +38,11 @@ h1 {
   font-size: 5rem;
   margin-top: 0;
 }
+
+.player-turn-copy {
+  font-size: 3rem;
+}
+
 
 h2, p {
   text-align: center;
@@ -98,6 +107,10 @@ body {
   background-color: $yellowMarker;
 }
 
+.chaos {
+  background-color: var(--chaosColor);
+}
+
 .piece {
   height: 50px;
   width: 50px;
@@ -105,6 +118,10 @@ body {
   border: 2px solid black;
   box-shadow: -5px 5px 10px 0px rgba(0,0,0,0.19);
 }
+
+
+
+
 
 .instructions-button {
   margin-top: 15px;
@@ -182,18 +199,20 @@ body {
   border-radius: 10px;
 }
 
-.swal-button, .instructions-button {
+.swal-button, .instructions-button, .play-again-button {
   padding: 7px 19px;
   background-color: $boardColor;
-  font-size: 12px;
+  font-size: 1.6rem;
   border: 1px solid black;
   border-radius: 5px;
   box-shadow: -5px 5px 10px 0px rgba(0,0,0,0.19);
 }
 
-.swal-button:hover, .instructions-button:hover {
+.swal-button:hover, .instructions-button:hover, .play-again-button:hover {
   background-color: $highlightColor;
 }
+
+
 
 footer {
   a {
