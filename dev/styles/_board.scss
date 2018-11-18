@@ -1,0 +1,64 @@
+.board-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.board {
+  display: inline-grid;
+  grid-template-columns: repeat(7, 70px);
+  border: 5px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  background: $boardColor;
+  box-shadow: -5px 5px 10px 0px rgba(0,0,0,0.19);
+}
+
+.column {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.mouseover {
+  background-color: rgba(33,33,33,0.2);
+}
+
+.cell {
+  height: 50px;
+  width: 50px;
+  align-items: center;
+  background: white;
+  border-radius: 50%;
+  margin: 5px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.red {
+  background-color: $redMarker;
+}
+
+.yellow {
+  background-color: $yellowMarker;
+}
+
+.piece {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 2px solid black;
+  box-shadow: -5px 5px 10px 0px rgba(0,0,0,0.19);
+}
+
+@media (max-width: 525px) {
+  .board {
+    padding: 5px;
+  }
+  .cell {
+    margin: 2.5px 0;
+  }
+}

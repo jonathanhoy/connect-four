@@ -1,0 +1,69 @@
+.instructions-button, .play-again-button {
+  margin: 15px 15px 15px 0;
+  color: white;
+}
+
+.instructions-pop-out-container.hidden {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: rgba(33,33,33,0.7);
+  display: none;
+}
+
+.instructions-pop-out {
+  background: $bodyColor;
+  position: fixed;
+  top: 5%;
+  bottom: 5%;
+  left: 5%;
+  right: 5%;
+  border-radius: 10px;
+  border: 5px solid black;
+}
+
+.instructions-wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.instructions-images-carousel {
+  width: 90%;
+  margin: 0 auto;
+  display: none;
+}
+
+.instructions-image {
+  width: 50%;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+
+.flickity-prev-next-button.previous, .flickity-prev-next-button.next {
+  border-radius: 10px;
+  background: none;
+}
+
+.flickity-prev-next-button.previous {
+  left: -50px;
+}
+
+.flickity-prev-next-button.next {
+  right: -50px;
+}
+
+.instructions-exit {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 2rem;
+}
+
+@media (max-height: 400px) {
+  .instructions-images-carousel {
+    height: 60vh;
+  }
+}

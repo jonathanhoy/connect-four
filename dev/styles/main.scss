@@ -1,13 +1,17 @@
-@import 'setup';
-
-// font-family: 'Comfortaa', sans-serif;
-
 $bodyColor: #FAF0E6; // linen
 $titleColor: #F77683; // pink
 $boardColor: #6495ED; // cornflowerblue
 $highlightColor: #78cbf2;
-$yellowMarker: #f8e281;
+$yellowMarker: #ffe14f;
 $redMarker: #ff6347;
+
+@import 'setup';
+@import 'board';
+@import 'instructions';
+@import 'sweet-alerts';
+
+// font-family: 'Comfortaa', sans-serif;
+
 
 
 html {
@@ -61,156 +65,35 @@ body {
   margin: 0 auto;
 }
 
-.board-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.board {
-  display: inline-grid;
-  grid-template-columns: repeat(7, 70px);
-  border: 5px solid black;
-  border-radius: 10px;
-  padding: 10px;
-  background: $boardColor;
-  box-shadow: -5px 5px 10px 0px rgba(0,0,0,0.19);
-}
-
-.column {
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-}
-
-.mouseover {
-  background-color: rgba(33,33,33,0.2);
-}
-
-.cell {
-  height: 50px;
-  width: 50px;
-  align-items: center;
-  background: white;
-  border-radius: 50%;
-  margin: 5px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.red {
-  background-color: $redMarker;
-}
-
-.yellow {
-  background-color: $yellowMarker;
-}
-
-.piece {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  border: 2px solid black;
-  box-shadow: -5px 5px 10px 0px rgba(0,0,0,0.19);
-}
-
-
-
-
-.instructions-button, .play-again-button {
-  margin: 15px 15px 15px 0;
-  color: white;
-}
-
-.instructions-pop-out-container.hidden {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  background-color: rgba(33,33,33,0.7);
+.mobile {
   display: none;
+  &-pop-up-container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: rgba(33,33,33,0.7);
+  }
+  &-pop-up {
+    background: $bodyColor;
+    position: fixed;
+    top: 5%;
+    bottom: 5%;
+    left: 5%;
+    right: 5%;
+    border-radius: 10px;
+    border: 5px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h2 {
+      width: 75%;
+      text-align: center;
+    }
+  }
 }
-
-.instructions-pop-out {
-  background: $bodyColor;
-  position: absolute;
-  top: 5%;
-  bottom: 5%;
-  left: 5%;
-  right: 5%;
-  border-radius: 10px;
-  border: 5px solid black;
-}
-
-.instructions-wrapper {
-  width: 90%;
-  margin: 0 auto;
-}
-
-.instructions-images-carousel {
-  width: 90%;
-  margin: 0 auto;
-  display: none;
-}
-
-.instructions-image {
-  width: 50%;
-  margin-right: 10px;
-  border-radius: 10px;
-}
-
-.flickity-prev-next-button.previous, .flickity-prev-next-button.next {
-  border-radius: 10px;
-  background: none;
-}
-
-.flickity-prev-next-button.previous {
-  left: -50px;
-}
-
-.flickity-prev-next-button.next {
-  right: -50px;
-}
-
-.instructions-exit {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  font-size: 2rem;
-}
-
-
-
-
-.swal-overlay {
-  background-color: rgba(33,33,33,0.7);
-}
-
-.swal-modal {
-  background-color: $bodyColor;
-  border: 5px solid black;
-  border-radius: 10px;
-}
-
-.swal-button, .instructions-button, .play-again-button {
-  padding: 7px 19px;
-  background-color: $boardColor;
-  font-size: 1.6rem;
-  border: 1px solid black;
-  border-radius: 5px;
-  box-shadow: -5px 5px 10px 0px rgba(0,0,0,0.19);
-}
-
-.swal-button:hover, .instructions-button:hover, .play-again-button:hover {
-  background-color: $highlightColor;
-}
-
-
 
 footer {
   a {
@@ -220,5 +103,12 @@ footer {
     &:hover {
       color: $titleColor;
     }
+  }
+}
+
+
+@media (max-width: 525px) {
+  .mobile {
+    display: block;
   }
 }

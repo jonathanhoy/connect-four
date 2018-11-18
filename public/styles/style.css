@@ -131,54 +131,6 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
-html {
-  font-size: 62.5%; }
-
-body {
-  font-size: 1.6rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  font-family: 'Comfortaa', sans-serif; }
-
-img {
-  max-width: 100%;
-  display: block; }
-
-.main-title, .instructions-title {
-  text-align: center;
-  font-weight: 700;
-  color: #F77683;
-  text-shadow: -.030em .030em #FFF6E6, -.08em .08em #E7DCD7;
-  font-size: 5rem;
-  margin-top: 0; }
-
-.instructions-title {
-  margin: 15px 0;
-  font-size: 4rem; }
-
-.player-turn-text {
-  font-size: 3rem; }
-
-h2, p {
-  text-align: center; }
-
-body {
-  background-color: #FAF0E6;
-  height: 100vh; }
-
-.wrapper {
-  max-width: 1280px;
-  width: 90%;
-  margin: 0 auto; }
-
 .board-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -240,7 +192,7 @@ body {
   background-color: #ff6347; }
 
 .yellow {
-  background-color: #f8e281; }
+  background-color: #ffe14f; }
 
 .piece {
   height: 50px;
@@ -250,12 +202,18 @@ body {
   -webkit-box-shadow: -5px 5px 10px 0px rgba(0, 0, 0, 0.19);
           box-shadow: -5px 5px 10px 0px rgba(0, 0, 0, 0.19); }
 
+@media (max-width: 525px) {
+  .board {
+    padding: 5px; }
+  .cell {
+    margin: 2.5px 0; } }
+
 .instructions-button, .play-again-button {
   margin: 15px 15px 15px 0;
   color: white; }
 
 .instructions-pop-out-container.hidden {
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
@@ -266,7 +224,7 @@ body {
 
 .instructions-pop-out {
   background: #FAF0E6;
-  position: absolute;
+  position: fixed;
   top: 5%;
   bottom: 5%;
   left: 5%;
@@ -304,6 +262,10 @@ body {
   left: 10px;
   font-size: 2rem; }
 
+@media (max-height: 400px) {
+  .instructions-images-carousel {
+    height: 60vh; } }
+
 .swal-overlay {
   background-color: rgba(33, 33, 33, 0.7); }
 
@@ -324,6 +286,86 @@ body {
 .swal-button:hover, .instructions-button:hover, .play-again-button:hover {
   background-color: #78cbf2; }
 
+html {
+  font-size: 62.5%; }
+
+body {
+  font-size: 1.6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-family: 'Comfortaa', sans-serif; }
+
+img {
+  max-width: 100%;
+  display: block; }
+
+.main-title, .instructions-title {
+  text-align: center;
+  font-weight: 700;
+  color: #F77683;
+  text-shadow: -.030em .030em #FFF6E6, -.08em .08em #E7DCD7;
+  font-size: 5rem;
+  margin-top: 0; }
+
+.instructions-title {
+  margin: 15px 0;
+  font-size: 4rem; }
+
+.player-turn-text {
+  font-size: 3rem; }
+
+h2, p {
+  text-align: center; }
+
+body {
+  background-color: #FAF0E6;
+  height: 100vh; }
+
+.wrapper {
+  max-width: 1280px;
+  width: 90%;
+  margin: 0 auto; }
+
+.mobile {
+  display: none; }
+  .mobile-pop-up-container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: rgba(33, 33, 33, 0.7); }
+  .mobile-pop-up {
+    background: #FAF0E6;
+    position: fixed;
+    top: 5%;
+    bottom: 5%;
+    left: 5%;
+    right: 5%;
+    border-radius: 10px;
+    border: 5px solid black;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .mobile-pop-up h2 {
+      width: 75%;
+      text-align: center; }
+
 footer a {
   text-decoration: none;
   color: black;
@@ -331,3 +373,7 @@ footer a {
   transition: color 0.3s; }
   footer a:hover {
     color: #F77683; }
+
+@media (max-width: 525px) {
+  .mobile {
+    display: block; } }
