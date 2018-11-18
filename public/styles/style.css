@@ -253,8 +253,8 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(33, 33, 33, 0.7);
   z-index: 100;
+  background-color: rgba(33, 33, 33, 0.7);
   display: none; }
 
 .instructions-pop-out {
@@ -264,7 +264,8 @@ body {
   bottom: 5%;
   left: 5%;
   right: 5%;
-  border-radius: 10px; }
+  border-radius: 10px;
+  border: 5px solid black; }
 
 .instructions-wrapper {
   width: 90%;
@@ -272,20 +273,23 @@ body {
 
 .instructions-images-carousel {
   width: 90%;
-  margin: 0 auto; }
+  margin: 0 auto;
+  display: none; }
 
 .instructions-image {
   width: 50%;
   margin-right: 10px;
   border-radius: 10px; }
 
+.flickity-prev-next-button.previous, .flickity-prev-next-button.next {
+  border-radius: 10px;
+  background: none; }
+
 .flickity-prev-next-button.previous {
-  left: -50px;
-  border-radius: 10px; }
+  left: -50px; }
 
 .flickity-prev-next-button.next {
-  right: -50px;
-  border-radius: 10px; }
+  right: -50px; }
 
 .instructions-exit {
   position: absolute;

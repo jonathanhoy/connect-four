@@ -116,6 +116,7 @@ $('.instructions-images-carousel').flickity({
 
 $('.instructions-button').on('click', function() {
   $('.instructions-pop-out-container').show();
+  $('.instructions-images-carousel').show().flickity('resize');
 })
 
 $('.instructions-exit').on('click', function() {
