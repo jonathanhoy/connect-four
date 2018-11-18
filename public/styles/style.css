@@ -208,7 +208,18 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   .cell {
     margin: 2.5px 0; } }
 
-.instructions-button, .play-again-button {
+@media (max-width: 812px) and (min-width: 375px) {
+  .board {
+    grid-template-columns: repeat(7, 50px);
+    padding: 5px 0 0 0; }
+  .cell {
+    height: 40px;
+    width: 40px; }
+  .piece {
+    height: 40px;
+    width: 40px; } }
+
+.instructions-button, .play-again-button, .chaos-button {
   margin: 15px 15px 15px 0;
   color: white; }
 
@@ -262,9 +273,18 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   left: 10px;
   font-size: 2rem; }
 
-@media (max-height: 400px) {
+.chaos-button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: none; }
+
+@media (max-width: 900px) {
   .instructions-images-carousel {
-    height: 60vh; } }
+    height: 100px;
+    width: 50%; }
+  .chaos-button {
+    display: block; } }
 
 .swal-overlay {
   background-color: rgba(33, 33, 33, 0.7); }
@@ -274,7 +294,7 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   border: 5px solid black;
   border-radius: 10px; }
 
-.swal-button, .instructions-button, .play-again-button {
+.swal-button, .instructions-button, .play-again-button, .chaos-button {
   padding: 7px 19px;
   background-color: #6495ED;
   font-size: 1.6rem;
@@ -333,38 +353,6 @@ body {
   max-width: 1280px;
   width: 90%;
   margin: 0 auto; }
-
-.mobile {
-  display: none; }
-  .mobile-pop-up-container {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    background-color: rgba(33, 33, 33, 0.7); }
-  .mobile-pop-up {
-    background: #FAF0E6;
-    position: fixed;
-    top: 5%;
-    bottom: 5%;
-    left: 5%;
-    right: 5%;
-    border-radius: 10px;
-    border: 5px solid black;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center; }
-    .mobile-pop-up h2 {
-      width: 75%;
-      text-align: center; }
 
 footer a {
   text-decoration: none;

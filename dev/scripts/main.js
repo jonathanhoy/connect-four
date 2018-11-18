@@ -170,6 +170,17 @@ $('.play-again-button').on('click', function() {
   $('.cell').css('background-color', 'white')
 })
 
+$('.chaos-button').on('click', function() {
+  $('.instructions-pop-out-container').hide();
+  app.chaosMode = true;
+  app.konamiCodePosition = 0;
+  const text = 'life is chaos 😈'.toUpperCase();
+  swal({
+    title: text,
+  });
+  app.chaosTitle();
+})
+
 // CHAOS MODE
 // Konami code credit: https://stackoverflow.com/questions/31626852/how-to-add-konami-code-in-a-website-based-on-html
 
@@ -212,7 +223,7 @@ app.chaosTitle = function() {
     const text = ('life is chaos').toUpperCase();
     $('.main-title').text(`${text}`);
     $('.main-title').css('color', `${random}`);
-  }, 75)
+  }, 50)
 }
 
 // INIT
