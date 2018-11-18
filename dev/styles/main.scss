@@ -23,6 +23,7 @@ body {
 
 img {
   max-width: 100%;
+  display: block;
 }
 
 h1 {
@@ -34,7 +35,7 @@ h1 {
   margin-top: 0;
 }
 
-p {
+h2, p {
   text-align: center;
 }
 
@@ -110,13 +111,15 @@ body {
   color: white;
 }
 
-.instructions-pop-out-container {
+.instructions-pop-out-container.hidden {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   background-color: rgba(33,33,33,0.7);
+  z-index: 100;
+  display: none;
 }
 
 .instructions-pop-out {
@@ -126,9 +129,39 @@ body {
   bottom: 5%;
   left: 5%;
   right: 5%;
+  border-radius: 10px;
 }
 
+.instructions-wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
 
+.instructions-images-carousel {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.instructions-image {
+  width: 50%;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+
+.flickity-prev-next-button.previous {
+  left: -50px;
+  border-radius: 10px;
+}
+.flickity-prev-next-button.next {
+  right: -50px;
+  border-radius: 10px;
+}
+
+.instructions-exit {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
 
 
 
@@ -157,5 +190,12 @@ body {
 }
 
 footer {
-  
+  a {
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s;
+    &:hover {
+      color: $titleColor;
+    }
+  }
 }

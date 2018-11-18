@@ -8,21 +8,27 @@
 	<link rel="shortcut icon" type="image/png" href="public/assets/favicon.png" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700" rel="stylesheet">
+	<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+	 crossorigin="anonymous">
 	<link rel="stylesheet" href="public/styles/style.css">
 </head>
 <body>
 	<div class="wrapper">
 		<header>
 			<button class="instructions-button">How to play</button>
-			<div class="instructions-pop-out-container">
+			<div class="instructions-pop-out-container hidden">
 				<div class="instructions-pop-out">
-					<h2>How to play</h2>
-					<p>Players take turns placing markers on the board trying to connect 4 markers! Markers can match horizontally, vertically, or diagonally.</p>
-					<div class="instructions-images">
-						<img src="public/assets/ins-horizontal.png" alt="A sample image of four horizontal markers." class="instructions-image">
-						<img src="public/assets/ins-vertical.png" alt="A sample image of four vertical markers." class="instructions-image">
-						<img src="public/assets/ins-diagonal1.png" alt="A sample image of four diagonal markers" class="instructions-image">
-						<img src="public/assets/ins-diagonal2.png" alt="A sample image of four diagonal markers" class="instructions-image">
+					<div class="instructions-wrapper">
+						<h2>How to play</h2>
+						<p>Players take turns placing markers on the board trying to connect 4 markers! Markers can match horizontally, vertically, or diagonally.</p>
+						<div class="instructions-images-carousel">
+							<img src="public/assets/ins-horizontal.png" alt="A sample image of four horizontal markers." class="instructions-image">
+							<img src="public/assets/ins-vertical.png" alt="A sample image of four vertical markers." class="instructions-image">
+							<img src="public/assets/ins-diagonal1.png" alt="A sample image of four diagonal markers" class="instructions-image">
+							<img src="public/assets/ins-diagonal2.png" alt="A sample image of four diagonal markers" class="instructions-image">
+						</div>
+						<i class="fas fa-times instructions-exit"></i>
 					</div>
 				</div>
 			</div>
@@ -94,13 +100,14 @@
 		</section>
 	</div>
 	<footer>
-		<p>Copyright &copy; Jonathan, 2018</p>
+		<p>Copyright &copy; <a href="https://jonathanhoy.com" target="_blank">Jonathan</a>, 2018</p>
 	</footer>
 
 
 
 	<script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=' crossorigin='anonymous'></script>
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 	<script src="public/scripts/main.js"></script>
 </body>
 </html>
