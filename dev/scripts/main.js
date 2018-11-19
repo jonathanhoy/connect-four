@@ -21,7 +21,7 @@ app.addPiece = function() {
     const selectedColumn = app.columns[`${index}`];
     if (selectedColumn.length === 6) {
       swal({
-        title: 'Invalid move! 🙅🏻‍♂️'
+        title: `Can't do that! 🙅🏻‍♂`
       });
     } else if (selectedColumn.length < 6) {
       const color = app.nextTurn[app.nextTurn.length - 1];
