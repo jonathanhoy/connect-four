@@ -32,6 +32,7 @@ app.addPiece = function() {
       app.placeMarker(index, cellNum, color, selectedColumn);
       app.changeTurn();
       app.checkForWin(i, x, y, color);
+      app.tieGame();
     }
   });
 }
@@ -62,7 +63,6 @@ app.checkForWin = function(i, x, y, color) {
   app.checkForHorizontalWin(i, x, y, color);
   app.checkForDiagonalWin(i, x, y, color);
   app.checkForOtherWins(i, x, y, color);
-  app.tieGame(i, x);
 }
 
 app.checkForVerticalWin = function(i, x, y, color) {
@@ -105,18 +105,20 @@ app.checkForOtherWins = function(i, x, y, color) {
   }
 }
 
-app.tieGame = function(i, x) {
+app.tieGame = function() {
   if (
-    i[x].length === 6 &&
-    i[x + 1].length === 6 &&
-    i[x + 2].length === 6 &&
-    i[x + 3].length === 6 &&
-    i[x + 4].length === 6 &&
-    i[x + 5].length === 6 &&
-    i[x + 6].length === 6
+    app.columns.a.length === 6 &&
+    app.columns.b.length === 6 &&
+    app.columns.c.length === 6 &&
+    app.columns.d.length === 6 &&
+    app.columns.e.length === 6 &&
+    app.columns.f.length === 6 &&
+    app.columns.g.length === 6
     ) {
-    console.log('tie game')
-  }
+      swal({
+        title: 'Tie game! Please play again!'
+      })
+    }
 }
 
 app.alertWin = function(color) {
