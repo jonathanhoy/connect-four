@@ -281,6 +281,9 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
       -ms-flex-pack: justify;
           justify-content: space-between; }
 
+.instructions-text {
+  line-height: 1.6; }
+
 .instructions-images-carousel {
   width: 100%;
   margin: 0 auto;
@@ -317,6 +320,12 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
     width: 50%; }
   .flickity-page-dots {
     display: none; } }
+
+@media (max-height: 320px) and (max-width: 600px) {
+  .instructions-images-carousel {
+    margin: 0; }
+  .instructions-title {
+    margin: 0; } }
 
 .swal-overlay {
   background-color: rgba(33, 33, 33, 0.7); }
@@ -459,4 +468,7 @@ footer a {
     margin: 5px 0;
     font-size: 3rem; }
   .player-turn-text {
-    font-size: 1.8rem; } }
+    font-size: 1.8rem; }
+  .instructions-title {
+    margin: 5px 0 0 0;
+    font-size: 3rem; } }
