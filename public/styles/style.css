@@ -144,7 +144,7 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 
 .board {
   display: inline-grid;
-  grid-template-columns: repeat(7, 70px);
+  grid-template-columns: repeat(7, 80px);
   border: 5px solid black;
   border-radius: 10px;
   padding: 10px;
@@ -172,8 +172,8 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   background-color: rgba(33, 33, 33, 0.2); }
 
 .cell {
-  height: 50px;
-  width: 50px;
+  height: 60px;
+  width: 60px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -195,23 +195,28 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   background-color: #ffe14f; }
 
 .piece {
-  height: 50px;
-  width: 50px;
+  height: 60px;
+  width: 60px;
   border-radius: 50%;
   border: 2px solid black;
   -webkit-box-shadow: -5px 5px 10px 0px rgba(0, 0, 0, 0.19);
           box-shadow: -5px 5px 10px 0px rgba(0, 0, 0, 0.19); }
 
-@media (max-width: 525px) {
+@media (max-width: 650px) {
   .board {
-    padding: 5px; }
+    grid-template-columns: repeat(7, 60px);
+    padding: 10px; }
   .cell {
-    margin: 2.5px 0; } }
+    height: 50px;
+    width: 50px; }
+  .piece {
+    height: 50px;
+    width: 50px; } }
 
-@media (max-width: 812px) and (min-width: 375px) {
+@media (max-width: 500px) {
   .board {
-    grid-template-columns: repeat(7, 50px);
-    padding: 5px 0 0 0; }
+    grid-template-columns: repeat(7, 45px);
+    padding: 5px; }
   .cell {
     height: 40px;
     width: 40px; }
@@ -219,8 +224,18 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
     height: 40px;
     width: 40px; } }
 
+@media (max-height: 320px) and (max-width: 600px) {
+  .board {
+    grid-template-columns: repeat(7, 45px); }
+  .cell {
+    height: 35px;
+    width: 35px; }
+  .piece {
+    height: 35px;
+    width: 35px; } }
+
 .instructions-button, .play-again-button, .chaos-button {
-  margin: 15px 15px 15px 0;
+  margin: 15px 0;
   color: white; }
 
 .instructions-pop-out-container.hidden {
@@ -298,7 +313,7 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   padding: 7px 19px;
   background-color: #6495ED;
   font-size: 1.6rem;
-  border: 1px solid black;
+  border: 3px solid black;
   border-radius: 5px;
   -webkit-box-shadow: -5px 5px 10px 0px rgba(0, 0, 0, 0.19);
           box-shadow: -5px 5px 10px 0px rgba(0, 0, 0, 0.19); }
@@ -327,20 +342,29 @@ img {
   max-width: 100%;
   display: block; }
 
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
 .main-title, .instructions-title {
   text-align: center;
   font-weight: 700;
   color: #F77683;
   text-shadow: -.030em .030em #FFF6E6, -.08em .08em #E7DCD7;
   font-size: 5rem;
-  margin-top: 0; }
+  margin: 30px 0; }
 
 .instructions-title {
   margin: 15px 0;
   font-size: 4rem; }
 
 .player-turn-text {
-  font-size: 3rem; }
+  font-size: 3rem;
+  margin: 0; }
 
 h2, p {
   text-align: center; }
@@ -350,9 +374,41 @@ body {
   height: 100vh; }
 
 .wrapper {
-  max-width: 1280px;
-  width: 90%;
+  max-width: 590px;
+  width: 95%;
   margin: 0 auto; }
+
+.mobile {
+  display: none; }
+  .mobile-pop-up-container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: rgba(33, 33, 33, 0.7); }
+  .mobile-pop-up {
+    background: #FAF0E6;
+    position: fixed;
+    top: 5%;
+    bottom: 5%;
+    left: 5%;
+    right: 5%;
+    border-radius: 10px;
+    border: 5px solid black;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .mobile-pop-up h2 {
+      width: 75%;
+      text-align: center; }
 
 footer a {
   text-decoration: none;
@@ -362,6 +418,28 @@ footer a {
   footer a:hover {
     color: #F77683; }
 
-@media (max-width: 525px) {
+@media (max-width: 650px) {
+  .wrapper {
+    max-width: 450px; } }
+
+@media (max-width: 500px) {
+  .wrapper {
+    max-width: 335px; }
+  .main-title {
+    font-size: 4rem;
+    margin: 30px 0; }
+  .player-turn-text {
+    font-size: 2.5rem; } }
+
+@media (max-width: 350px) {
   .mobile {
     display: block; } }
+
+@media (max-height: 320px) and (max-width: 600px) {
+  .wrapper {
+    max-width: 345px; }
+  .main-title {
+    margin: 5px 0;
+    font-size: 3rem; }
+  .player-turn-text {
+    font-size: 1.8rem; } }

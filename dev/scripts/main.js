@@ -39,7 +39,7 @@ app.addPiece = function() {
 app.placeMarker = function(index, cellNum, color, selectedColumn) {
   app.randomColor = app.chaosColors[Math.floor(Math.random() * app.chaosColors.length) + 1];
   if (app.chaosMode === true) {
-    $(`.column-${index} .cell-${cellNum}`).append(`<div class="piece animated jello infinite"></div>`).css('background-color', `${app.randomColor}`);
+    $(`.column-${index} .cell-${cellNum}`).append(`<div class="piece animated jello infinite faster"></div>`).css('background-color', `${app.randomColor}`);
   } else {
     $(`.column-${index} .cell-${cellNum}`).append(`<div class="piece ${color} animated fadeInDownBig faster"></div>`);
   }
@@ -124,7 +124,7 @@ app.alertWin = function(color) {
   window.setTimeout(function() {
     swal({
       title: `Congratulations ${color} player!`,
-      text: `Winner Winner Chicken Dinner 🍗🍗🍗🍗`
+      text: `Winner Winner Chicken Dinner! 🍗`
     });
   }, 650);
 }
@@ -134,25 +134,31 @@ app.alertWin = function(color) {
 
 
 // EVENT LISTENERS
+
+// Highlight board column
 $('.column').hover(function() {
   $(this).toggleClass('mouseover');
 });
 
+// Flickity for image carousel in instructions pop up
 $('.instructions-images-carousel').flickity({
   cellAlign: 'center',
   contain: true,
   wrapAround: true
 });
 
+// Button to show instructions
 $('.instructions-button').on('click', function() {
   $('.instructions-pop-out-container').show();
   $('.instructions-images-carousel').show().flickity('resize');
 })
 
+// Icon to hide instructions
 $('.instructions-exit').on('click', function() {
   $('.instructions-pop-out-container').hide();
 })
 
+// Play again button that clears board and arrays
 $('.play-again-button').on('click', function() {
   app.columns = {
     a: [],
@@ -170,6 +176,7 @@ $('.play-again-button').on('click', function() {
   $('.cell').css('background-color', 'white')
 })
 
+// Chaos mode button for mobile
 $('.chaos-button').on('click', function() {
   $('.instructions-pop-out-container').hide();
   app.chaosMode = true;
