@@ -4,3 +4,23 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 .clearfix:after {visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
 
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+$bodyColor: #FAF0E6; // linen
+$titleColor: #F77683; // pink
+$boardColor: #6495ED; // cornflowerblue
+$highlightColor: #78cbf2;
+$yellowMarker: #ffe14f;
+$redMarker: #ff6347;
+
+@mixin buttonStyling() {
+  padding: 7px 19px;
+  background-color: $boardColor;
+  font-size: 1.6rem;
+  border: 3px solid black;
+  border-radius: 5px;
+  box-shadow: -5px 5px 10px 0px rgba(0,0,0,0.19);
+}
+
+.instructions-button, .play-again-button, .chaos-button {
+  @include buttonStyling();
+}

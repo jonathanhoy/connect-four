@@ -23,15 +23,19 @@
   right: 5%;
   border-radius: 10px;
   border: 5px solid black;
+  // height: 100vh;
 }
 
 .instructions-wrapper {
   width: 90%;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .instructions-images-carousel {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   display: none;
 }
@@ -43,16 +47,7 @@
 }
 
 .flickity-prev-next-button.previous, .flickity-prev-next-button.next {
-  border-radius: 10px;
-  background: none;
-}
-
-.flickity-prev-next-button.previous {
-  left: -50px;
-}
-
-.flickity-prev-next-button.next {
-  right: -50px;
+  display: none;
 }
 
 .instructions-exit {
@@ -73,9 +68,17 @@
 @media (max-width: 900px) {
   .instructions-images-carousel {
     height: 100px;
-    width: 50%;
   }
   .chaos-button {
     display: block;
+  }
+}
+
+@media (max-height: 500px) {
+  .instructions-images-carousel {
+    width: 50%;
+  }
+  .flickity-page-dots {
+    display: none;
   }
 }

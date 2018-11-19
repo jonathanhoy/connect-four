@@ -8,13 +8,8 @@
   border-radius: 10px;
 }
 
-.swal-button, .instructions-button, .play-again-button, .chaos-button {
-  padding: 7px 19px;
-  background-color: $boardColor;
-  font-size: 1.6rem;
-  border: 3px solid black;
-  border-radius: 5px;
-  box-shadow: -5px 5px 10px 0px rgba(0,0,0,0.19);
+.swal-button {
+  @include buttonStyling();
 }
 
 .swal-button:hover, .instructions-button:hover, .play-again-button:hover {

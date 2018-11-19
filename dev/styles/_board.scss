@@ -75,17 +75,16 @@
     padding: 5px;
   }
   .cell {
-    height: 40px;
-    width: 40px;
+    height: 35px;
+    width: 35px;
   }
   .piece {
-    height: 40px;
-    width: 40px;
+    height: 35px;
+    width: 35px;
   }
 }
 
 // SMALL MOBILE LANDSCAPE-ONLY
-
 @media (max-height: 320px) and (max-width: 600px) {
   .board {
     grid-template-columns: repeat(7, 45px);
@@ -98,5 +97,4 @@
     height: 35px;
     width: 35px;
   }
-  
 }

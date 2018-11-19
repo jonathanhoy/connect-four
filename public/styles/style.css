@@ -131,6 +131,15 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
+.instructions-button, .play-again-button, .chaos-button {
+  padding: 7px 19px;
+  background-color: #6495ED;
+  font-size: 1.6rem;
+  border: 3px solid black;
+  border-radius: 5px;
+  -webkit-box-shadow: -5px 5px 10px 0px rgba(0, 0, 0, 0.19);
+          box-shadow: -5px 5px 10px 0px rgba(0, 0, 0, 0.19); }
+
 .board-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -218,11 +227,11 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
     grid-template-columns: repeat(7, 45px);
     padding: 5px; }
   .cell {
-    height: 40px;
-    width: 40px; }
+    height: 35px;
+    width: 35px; }
   .piece {
-    height: 40px;
-    width: 40px; } }
+    height: 35px;
+    width: 35px; } }
 
 @media (max-height: 320px) and (max-width: 600px) {
   .board {
@@ -260,10 +269,20 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 
 .instructions-wrapper {
   width: 90%;
-  margin: 0 auto; }
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
 
 .instructions-images-carousel {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   display: none; }
 
@@ -273,14 +292,7 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   border-radius: 10px; }
 
 .flickity-prev-next-button.previous, .flickity-prev-next-button.next {
-  border-radius: 10px;
-  background: none; }
-
-.flickity-prev-next-button.previous {
-  left: -50px; }
-
-.flickity-prev-next-button.next {
-  right: -50px; }
+  display: none; }
 
 .instructions-exit {
   position: absolute;
@@ -296,10 +308,15 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 
 @media (max-width: 900px) {
   .instructions-images-carousel {
-    height: 100px;
-    width: 50%; }
+    height: 100px; }
   .chaos-button {
     display: block; } }
+
+@media (max-height: 500px) {
+  .instructions-images-carousel {
+    width: 50%; }
+  .flickity-page-dots {
+    display: none; } }
 
 .swal-overlay {
   background-color: rgba(33, 33, 33, 0.7); }
@@ -309,7 +326,7 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   border: 5px solid black;
   border-radius: 10px; }
 
-.swal-button, .instructions-button, .play-again-button, .chaos-button {
+.swal-button {
   padding: 7px 19px;
   background-color: #6495ED;
   font-size: 1.6rem;
@@ -336,7 +353,9 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  font-family: 'Comfortaa', sans-serif; }
+  font-family: 'Comfortaa', sans-serif;
+  background-color: #FAF0E6;
+  height: 100vh; }
 
 img {
   max-width: 100%;
@@ -368,10 +387,6 @@ nav {
 
 h2, p {
   text-align: center; }
-
-body {
-  background-color: #FAF0E6;
-  height: 100vh; }
 
 .wrapper {
   max-width: 590px;
@@ -420,7 +435,9 @@ footer a {
 
 @media (max-width: 650px) {
   .wrapper {
-    max-width: 450px; } }
+    max-width: 450px; }
+  .instructions-button, .play-again-button {
+    margin: 30px 0; } }
 
 @media (max-width: 500px) {
   .wrapper {
@@ -429,7 +446,7 @@ footer a {
     font-size: 4rem;
     margin: 30px 0; }
   .player-turn-text {
-    font-size: 2.5rem; } }
+    font-size: 2rem; } }
 
 @media (max-width: 350px) {
   .mobile {
