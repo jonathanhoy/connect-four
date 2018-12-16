@@ -137,11 +137,6 @@ app.alertWin = function(color) {
 
 // EVENT LISTENERS
 
-// Highlight board column
-$('.column').hover(function() {
-  $(this).toggleClass('mouseover');
-});
-
 // Flickity for image carousel in instructions pop up
 $('.instructions-images-carousel').flickity({
   cellAlign: 'center',
