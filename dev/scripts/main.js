@@ -125,14 +125,12 @@ app.alertWin = function(color) {
   color = color.charAt(0).toUpperCase() + color.slice(1);
   window.setTimeout(function() {
     swal({
+      className: 'victory',
       title: `Congratulations ${color} player!`,
-      text: `Winner Winner Chicken Dinner! 🍗`
-    });
+      text: `Winner Winner Chicken Dinner! 🍗`,
+    }).then(resetOnVictory());
   }, 650);
 }
-
-
-
 
 
 // EVENT LISTENERS
@@ -172,6 +170,25 @@ $('.play-again-button').on('click', function() {
   $('.piece').remove();
   $('.cell').css('background-color', 'white')
 })
+
+const resetOnVictory = () => {
+  $('.victory').on('click', function () {
+    app.columns = {
+      a: [],
+      b: [],
+      c: [],
+      d: [],
+      e: [],
+      f: [],
+      g: [],
+      h: [],
+      i: [],
+      j: []
+    }
+    $('.piece').remove();
+    $('.cell').css('background-color', 'white')
+  })
+}
 
 // Chaos mode button for mobile
 $('.chaos-button').on('click', function() {
