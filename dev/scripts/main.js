@@ -74,12 +74,12 @@ app.checkForVerticalWin = function(i, x, y, color) {
 app.checkForDiagonalWin = function(i, x, y, color) {
   if (
     // DIAGONAL WINS (TOP-LEFT TO BOTTOM-RIGHT = TL-BR, BOTTOM-LEFT TO TOP-RIGHT = BL-TR) (POS */4 = LEFT-TO-RIGHT)
-    (i[x][y] === i[x + 3][y - 3] && i[x][y] === i[x + 2][y - 2] && i[x][y] === i[x + 1][y - 1]) || // TL-BR POS 1/4
-    (i[x][y] === i[x + 2][y - 2] && i[x][y] === i[x + 1][y - 1] && i[x][y] === i[x - 1][y + 1]) || // TL-BR POS 2/4
-    (i[x][y] === i[x + 1][y - 1] && i[x][y] === i[x - 1][y + 1] && i[x][y] === i[x - 2][y + 2]) || // TL-BR POS 3/4
-    (i[x][y] === i[x + 3][y + 3] && i[x][y] === i[x + 2][y + 2] && i[x][y] === i[x + 1][y + 1]) || // BL-TR POS 1/4
-    (i[x][y] === i[x + 2][y + 2] && i[x][y] === i[x + 1][y + 1] && i[x][y] === i[x - 1][y - 1]) || // BL-TR POS 2/4
-    (i[x][y] === i[x + 1][y + 1] && i[x][y] === i[x - 1][y - 1] && i[x][y] === i[x - 2][y - 2])    // BL-TR POS 3/4
+    (i[x + 3][y - 3] !== undefined && i[x][y] === i[x + 3][y - 3] && i[x + 2][y - 2] !== undefined && i[x][y] === i[x + 2][y - 2] && i[x + 1][y - 1] !== undefined && i[x][y] === i[x + 1][y - 1]) || // TL-BR POS 1/4
+    (i[x + 2][y - 2] !== undefined && i[x][y] === i[x + 2][y - 2] && i[x + 1][y - 1] !== undefined && i[x][y] === i[x + 1][y - 1] && i[x - 1] !== undefined && i[x][y] === i[x - 1][y + 1]) || // TL-BR POS 2/4
+    (i[x + 1][y - 1] !== undefined && i[x][y] === i[x + 1][y - 1] && i[x - 1] !== undefined && i[x][y] === i[x - 1][y + 1] && i[x - 2] !== undefined && i[x][y] === i[x - 2][y + 2]) || // TL-BR POS 3/4
+    (i[x + 3][y + 3] !== undefined && i[x][y] === i[x + 3][y + 3] && i[x + 2][y + 2] !== undefined && i[x][y] === i[x + 2][y + 2] && i[x + 1][y + 1] !== undefined && i[x][y] === i[x + 1][y + 1]) || // BL-TR POS 1/4
+    (i[x + 2][y + 2] !== undefined && i[x][y] === i[x + 2][y + 2] && i[x + 1][y + 1] !== undefined && i[x][y] === i[x + 1][y + 1] && i[x - 1] !== undefined && i[x][y] === i[x - 1][y - 1]) || // BL-TR POS 2/4
+    (i[x + 1][y + 1] !== undefined && i[x][y] === i[x + 1][y + 1] && i[x - 1] !== undefined && i[x][y] === i[x - 1][y - 1] && i[x - 2] !== undefined && i[x][y] === i[x - 2][y - 2])    // BL-TR POS 3/4
     ) {
     app.alertWin(color);
   }
@@ -87,9 +87,9 @@ app.checkForDiagonalWin = function(i, x, y, color) {
 
 app.checkForHorizontalWin = function(i, x, y, color) {
   if (
-    (i[x][y] === i[x + 3][y] && i[x][y] === i[x + 2][y] && i[x][y] === i[x + 1][y]) ||
-    (i[x][y] === i[x + 2][y] && i[x][y] === i[x + 1][y] && i[x][y] === i[x - 1][y]) ||
-    (i[x][y] === i[x + 1][y] && i[x][y] === i[x - 1][y] && i[x][y] === i[x - 2][y]) 
+    (i[x + 3][y] !== undefined && i[x][y] === i[x + 3][y] && i[x + 2][y] !== undefined && i[x][y] === i[x + 2][y] && i[x + 1][y] !== undefined && i[x][y] === i[x + 1][y]) ||
+    (i[x + 2][y] !== undefined && i[x][y] === i[x + 2][y] && i[x + 1][y] !== undefined && i[x][y] === i[x + 1][y] && i[x - 1] !== undefined && i[x][y] === i[x - 1][y]) ||
+    (i[x + 1][y] !== undefined && i[x][y] === i[x + 1][y] && i[x - 1] !== undefined && i[x][y] === i[x - 1][y] && i[x - 2] !== undefined && i[x][y] === i[x - 2][y]) 
     ) {
       app.alertWin(color);
     }
@@ -97,9 +97,9 @@ app.checkForHorizontalWin = function(i, x, y, color) {
 
 app.checkForOtherWins = function(i, x, y, color) {
   if (
-    (i[x][y] === i[x - 1][y + 1] && i[x][y] === i[x - 2][y + 2] && i[x][y] === i[x - 3][y + 3]) || // TL-BR POS 4/4
-    (i[x][y] === i[x - 1][y - 1] && i[x][y] === i[x - 2][y - 2] && i[x][y] === i[x - 3][y - 3]) || // BL-TR POS 4/4
-    (i[x][y] === i[x - 1][y] && i[x][y] === i[x - 2][y] && i[x][y] === i[x - 3][y]) // HORIZONTAL WIN WITH NEGATIVE X-VALUE
+    (i[x - 1] !== undefined && i[x][y] === i[x - 1][y + 1] && i[x - 2] !== undefined && i[x][y] === i[x - 2][y + 2] && i[x - 3] !== undefined && i[x][y] === i[x - 3][y + 3]) || // TL-BR POS 4/4
+    (i[x - 1] !== undefined && i[x][y] === i[x - 1][y - 1] && i[x - 2] !== undefined && i[x][y] === i[x - 2][y - 2] && i[x - 3] !== undefined && i[x][y] === i[x - 3][y - 3]) || // BL-TR POS 4/4
+    (i[x - 1] !== undefined && i[x][y] === i[x - 1][y] && i[x - 2] !== undefined && i[x][y] === i[x - 2][y] && i[x - 3] !== undefined && i[x][y] === i[x - 3][y]) // HORIZONTAL WIN WITH NEGATIVE X-VALUE
     ) {
     app.alertWin(color);
   }
