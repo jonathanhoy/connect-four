@@ -125,10 +125,9 @@ app.alertWin = function(color) {
   color = color.charAt(0).toUpperCase() + color.slice(1);
   window.setTimeout(function() {
     swal({
-      className: 'victory',
       title: `Congratulations ${color} player!`,
       text: `Winner Winner Chicken Dinner! 🍗`,
-    }).then(resetOnVictory());
+    }).then(app.resetBoard());
   }, 650);
 }
 
@@ -155,24 +154,11 @@ $('.instructions-exit').on('click', function() {
 
 // Play again button that clears board and arrays
 $('.play-again-button').on('click', function() {
-  app.columns = {
-    a: [],
-    b: [],
-    c: [],
-    d: [],
-    e: [],
-    f: [],
-    g: [],
-    h: [],
-    i: [],
-    j: []
-  }
-  $('.piece').remove();
-  $('.cell').css('background-color', 'white')
+  app.resetBoard();
 })
 
-const resetOnVictory = () => {
-  $('.victory').on('click', function () {
+app.resetBoard = () => {
+  $('button').on('click', function () {
     app.columns = {
       a: [],
       b: [],
@@ -186,7 +172,7 @@ const resetOnVictory = () => {
       j: []
     }
     $('.piece').remove();
-    $('.cell').css('background-color', 'white')
+    $('.cell').css('background-color', 'white');
   })
 }
 
@@ -198,6 +184,7 @@ $('.chaos-button').on('click', function() {
   const text = 'life is chaos 😈'.toUpperCase();
   swal({
     title: text,
+    content: 'a'
   });
   app.chaosTitle();
 })
@@ -240,7 +227,7 @@ document.addEventListener('keydown', function(e) {
 })
 app.chaosTitle = function() {
   setInterval(function () {
-    const random = (app.chaosColors[Math.floor(Math.random() * app.chaosColors.length) + 1]).toString();
+    const random = (app.chaosColors[Math.floor(Math.random() * app.chaosColors.length)]).toString();
     const text = ('life is chaos').toUpperCase();
     $('.main-title').text(`${text}`);
     $('.main-title').css('color', `${random}`);
