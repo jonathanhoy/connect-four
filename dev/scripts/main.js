@@ -124,6 +124,15 @@ app.alertWin = function(color) {
 
 // EVENT LISTENERS
 
+// Simulates click when column is in focus
+// app.addPieceOnClick = () => {
+//   $('.column').on('keyup', '.button', function (e) {
+//     if (e.which == 13 || e.which == 32) {
+//       app.addPiece();
+//     }
+//   });
+// }
+
 // Flickity for image carousel in instructions pop up
 $('.instructions-images-carousel').flickity({
   cellAlign: 'center',
@@ -227,6 +236,7 @@ app.chaosTitle = function() {
 // INIT
 app.init = function() {
   app.addPiece();
+  // app.addPieceOnClick();
 }
 
 // DOCUMENT READY
