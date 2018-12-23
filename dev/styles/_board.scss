@@ -20,10 +20,8 @@
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-}
-
-.mouseover {
-  background-color: rgba(33,33,33,0.2);
+  border: none;
+  background: none;
 }
 
 .cell {
@@ -97,4 +95,9 @@
     height: 35px;
     width: 35px;
   }
+}
+
+button {
+  border: none;
+  background: none;
 }
