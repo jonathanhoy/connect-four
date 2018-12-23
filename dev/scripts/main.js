@@ -13,24 +13,26 @@ app.nextTurn = ['red'];
 
 app.chaosColors = ["AliceBlue", "AntiqueWhite", "Aqua", "Aquamarine", "Azure", "Beige", "Bisque", "BlanchedAlmond", "Blue", "BlueViolet", "Brown", "BurlyWood", "CadetBlue", "Chartreuse", "Chocolate", "Coral", "CornflowerBlue", "Cornsilk", "Crimson", "Cyan", "DarkBlue", "DarkCyan", "DarkGoldenRod", "DarkGray", "DarkGrey", "DarkGreen", "DarkKhaki", "DarkMagenta", "DarkOliveGreen", "Darkorange", "DarkOrchid", "DarkRed", "DarkSalmon", "DarkSeaGreen", "DarkSlateBlue", "DarkSlateGray", "DarkSlateGrey", "DarkTurquoise", "DarkViolet", "DeepPink", "DeepSkyBlue", "DimGray", "DimGrey", "DodgerBlue", "FireBrick", "FloralWhite", "ForestGreen", "Fuchsia", "Gainsboro", "GhostWhite", "Gold", "GoldenRod", "Gray", "Grey", "Green", "GreenYellow", "HoneyDew", "HotPink", "IndianRed", "Indigo", "Ivory", "Khaki", "Lavender", "LavenderBlush", "LawnGreen", "LemonChiffon", "LightBlue", "LightCoral", "LightCyan", "LightGoldenRodYellow", "LightGray", "LightGrey", "LightGreen", "LightPink", "LightSalmon", "LightSeaGreen", "LightSkyBlue", "LightSlateGray", "LightSlateGrey", "LightSteelBlue", "LightYellow", "Lime", "LimeGreen", "Linen", "Magenta", "Maroon", "MediumAquaMarine", "MediumBlue", "MediumOrchid", "MediumPurple", "MediumSeaGreen", "MediumSlateBlue", "MediumSpringGreen", "MediumTurquoise", "MediumVioletRed", "MidnightBlue", "MintCream", "MistyRose", "Moccasin", "NavajoWhite", "Navy", "OldLace", "Olive", "OliveDrab", "Orange", "OrangeRed", "Orchid", "PaleGoldenRod", "PaleGreen", "PaleTurquoise", "PaleVioletRed", "PapayaWhip", "PeachPuff", "Peru", "Pink", "Plum", "PowderBlue", "Purple", "RebeccaPurple", "Red", "RosyBrown", "RoyalBlue", "SaddleBrown", "Salmon", "SandyBrown", "SeaGreen", "SeaShell", "Sienna", "Silver", "SkyBlue", "SlateBlue", "SlateGray", "SlateGrey", "Snow", "SpringGreen", "SteelBlue", "Tan", "Teal", "Thistle", "Tomato", "Turquoise", "Violet", "Wheat", "WhiteSmoke", "Yellow", "YellowGreen"];
 
-app.addPiece = function() {
-  $('.column').on('click', function () {
-    const index = $(this).data("column");
-    const selectedColumn = app.columns[`${index}`];
-    if (selectedColumn.length === 6) {
-      swal({
-        title: `Can't do that! 🙅🏻‍♂`
-      });
-    } else if (selectedColumn.length < 6) {
-      const color = app.nextTurn[app.nextTurn.length - 1];
-      const cellNum = selectedColumn.length + 1;
-      const i = Object.values(app.columns);
-      const x = $(this).data("array");
-      const y = cellNum - 1;
-      app.placeMarker(index, cellNum, color, selectedColumn);
-      app.changeTurn();
-      app.checkForWin(i, x, y, color);
-      app.tieGame();
+app.addPiece = function () {
+  $('.column').on('click keyup', function (e) {
+    if (e.type === 'click' || e.type === 'keyup' && e.which === 32 || e.type === 'keyup' && e.which === 13) {
+      const index = $(this).data("column");
+      const selectedColumn = app.columns[`${index}`];
+      if (selectedColumn.length === 6) {
+        swal({
+          title: `Can't do that! 🙅🏻‍♂`
+        });
+      } else if (selectedColumn.length < 6) {
+        const color = app.nextTurn[app.nextTurn.length - 1];
+        const cellNum = selectedColumn.length + 1;
+        const i = Object.values(app.columns);
+        const x = $(this).data("array");
+        const y = cellNum - 1;
+        app.placeMarker(index, cellNum, color, selectedColumn);
+        app.changeTurn();
+        app.checkForWin(i, x, y, color);
+        app.tieGame();
+      }
     }
   });
 }
@@ -80,7 +82,7 @@ app.checkForDiagonalWin = function(i, x, y, color) {
     (i[x + 1] !== undefined && i[x][y] === i[x + 1][y + 1] && i[x - 1] !== undefined && i[x][y] === i[x - 1][y - 1] && i[x - 2] !== undefined && i[x][y] === i[x - 2][y - 2]) || // BL-TR POS 3/4
     (i[x - 1] !== undefined && i[x][y] === i[x - 1][y - 1] && i[x - 2] !== undefined && i[x][y] === i[x - 2][y - 2] && i[x - 3] !== undefined && i[x][y] === i[x - 3][y - 3])    // BL-TR POS 4/4
     ) {
-    app.alertWin(color);
+      app.alertWin(color);
   }
 }
 
@@ -92,8 +94,8 @@ app.checkForHorizontalWin = function(i, x, y, color) {
     (i[x - 1] !== undefined && i[x][y] === i[x - 1][y] && i[x - 2] !== undefined && i[x][y] === i[x - 2][y] && i[x - 3] !== undefined && i[x][y] === i[x - 3][y])
     ) {
       app.alertWin(color);
-    }
   }
+}
 
 app.tieGame = function() {
   if (
@@ -107,7 +109,7 @@ app.tieGame = function() {
     ) {
       swal({
         title: 'Tie game! Please play again!'
-      })
+      }).then(app.resetBoard())
     }
 }
 
@@ -124,30 +126,13 @@ app.alertWin = function(color) {
 
 // EVENT LISTENERS
 
-// Simulates click when column is in focus
-// app.addPieceOnClick = () => {
-//   $('.column').on('keyup', '.button', function (e) {
-//     if (e.which == 13 || e.which == 32) {
-//       app.addPiece();
-//     }
-//   });
-// }
-
-// Flickity for image carousel in instructions pop up
-$('.instructions-images-carousel').flickity({
-  cellAlign: 'center',
-  contain: true,
-  wrapAround: true
-});
-
 // Button to show instructions
 $('.instructions-button').on('click', function() {
   $('.instructions-pop-out-container').show();
-  $('.instructions-images-carousel').show().flickity('resize');
 })
 
 // Icon to hide instructions
-$('.instructions-exit').on('click', function() {
+$('.instructions-exit').on('click', function(e) {
   $('.instructions-pop-out-container').hide();
 })
 
@@ -236,7 +221,6 @@ app.chaosTitle = function() {
 // INIT
 app.init = function() {
   app.addPiece();
-  // app.addPieceOnClick();
 }
 
 // DOCUMENT READY

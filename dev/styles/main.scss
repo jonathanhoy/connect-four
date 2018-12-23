@@ -27,18 +27,26 @@ nav {
   justify-content: space-between;
 }
 
-.main-title, .instructions-title {
+@mixin title($fontSize) {
   text-align: center;
   font-weight: 700;
   color: $titleColor;
   text-shadow: -.030em .030em #FFF6E6, -.08em .08em #E7DCD7;
-  font-size: 5rem;
+  font-size: $fontSize;
   margin: 30px 0;
 }
 
+.main-title {
+  @include title(5rem);
+}
+
 .instructions-title {
+  @include title(4rem);
   margin: 15px 0;
-  font-size: 4rem;
+}
+
+.instructions-subtitle {
+  @include title(3rem);
 }
 
 .player-turn-text {
