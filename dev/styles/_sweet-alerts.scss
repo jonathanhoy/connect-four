@@ -8,6 +8,9 @@
   border-radius: 10px;
 }
 
+.swal-footer {
+  text-align: center;
+}
 .swal-button {
   @include buttonStyling();
 }

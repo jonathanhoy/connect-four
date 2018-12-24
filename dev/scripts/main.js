@@ -127,18 +127,24 @@ app.alertWin = function(color) {
 // EVENT LISTENERS
 
 // Button to show instructions
-$('.instructions-button').on('click', function() {
+$('.instructions-show-button').on('click', function() {
   $('.instructions-modal-container').show();
 })
 
-// Icon to hide instructions
-$('.instructions-exit').on('click', function() {
+// Button to hide instructions
+$('.instructions-exit-button').on('click', function(e) {
   $('.instructions-modal-container').hide();
 })
 
 // Play again button that clears board and arrays
 $('.play-again-button').on('click', function() {
   app.resetBoard();
+})
+
+document.addEventListener('keyup', function(e) {
+  if (e.which === 27) {
+    $('.instructions-modal-container').hide();
+  }
 })
 
 app.resetBoard = () => {

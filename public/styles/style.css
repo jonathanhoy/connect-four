@@ -180,6 +180,7 @@ h2, p {
   color: #F77683;
   text-shadow: -.030em .030em #FFF6E6, -.08em .08em #E7DCD7;
   font-size: 5rem;
+  margin: 15px 0;
   margin: 30px 0; }
 
 .instructions-title {
@@ -188,7 +189,6 @@ h2, p {
   color: #F77683;
   text-shadow: -.030em .030em #FFF6E6, -.08em .08em #E7DCD7;
   font-size: 4rem;
-  margin: 30px 0;
   margin: 15px 0; }
 
 .instructions-subtitle {
@@ -197,7 +197,7 @@ h2, p {
   color: #F77683;
   text-shadow: -.030em .030em #FFF6E6, -.08em .08em #E7DCD7;
   font-size: 3rem;
-  margin: 30px 0; }
+  margin: 15px 0; }
 
 .player-turn-text {
   font-size: 3rem;
@@ -210,6 +210,19 @@ h2, p {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between; }
+
+button {
+  padding: 7px 19px;
+  background-color: #6495ED;
+  font-size: 1.6rem;
+  border: 3px solid black;
+  border-radius: 5px;
+  -webkit-box-shadow: -5px 5px 10px 0px rgba(0, 0, 0, 0.19);
+          box-shadow: -5px 5px 10px 0px rgba(0, 0, 0, 0.19);
+  margin: 15px 0;
+  color: white; }
+  button:hover {
+    background-color: #78cbf2; }
 
 .mobile {
   display: none; }
@@ -331,10 +344,14 @@ footer a {
   .piece {
     height: 50px;
     width: 50px; }
-  .instructions-button, .play-again-button {
+  .instructions-show-button, .play-again-button {
     margin: 30px 0; } }
 
 @media (max-width: 500px) {
+  body {
+    height: auto; }
+  footer {
+    margin-top: 25px; }
   .board {
     grid-template-columns: repeat(7, 45px);
     padding: 5px; }
@@ -396,7 +413,6 @@ footer a {
 .instructions-wrapper {
   width: 90%;
   margin: 0 auto;
-  margin-bottom: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -408,34 +424,16 @@ footer a {
       -ms-flex-pack: justify;
           justify-content: space-between; }
 
+.instructions-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
 .instructions-text {
   line-height: 1.6; }
-
-.instructions-exit {
-  padding: 7px 19px;
-  background-color: #6495ED;
-  font-size: 1.6rem;
-  border: 3px solid black;
-  border-radius: 5px;
-  -webkit-box-shadow: -5px 5px 10px 0px rgba(0, 0, 0, 0.19);
-          box-shadow: -5px 5px 10px 0px rgba(0, 0, 0, 0.19);
-  margin: 15px 0;
-  color: white; }
-  .instructions-exit:hover {
-    background-color: #78cbf2; }
-
-.chaos-button {
-  padding: 7px 19px;
-  background-color: #6495ED;
-  font-size: 1.6rem;
-  border: 3px solid black;
-  border-radius: 5px;
-  -webkit-box-shadow: -5px 5px 10px 0px rgba(0, 0, 0, 0.19);
-          box-shadow: -5px 5px 10px 0px rgba(0, 0, 0, 0.19);
-  margin: 15px 0;
-  color: white; }
-  .chaos-button:hover {
-    background-color: #78cbf2; }
 
 @media (max-width: 900px) {
   .chaos-button {
@@ -452,6 +450,9 @@ footer a {
   background-color: #FAF0E6;
   border: 5px solid black;
   border-radius: 10px; }
+
+.swal-footer {
+  text-align: center; }
 
 .swal-button {
   padding: 7px 19px;

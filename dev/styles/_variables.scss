@@ -5,7 +5,7 @@ $highlightColor: #78cbf2;
 $yellowMarker: #ffe14f;
 $redMarker: #ff6347;
 
-@mixin buttonStyling() {
+@mixin buttonStyling {
   padding: 7px 19px;
   background-color: $boardColor;
   font-size: 1.6rem;
@@ -25,5 +25,5 @@ $redMarker: #ff6347;
   color: $titleColor;
   text-shadow: -.030em .030em #FFF6E6, -.08em .08em #E7DCD7;
   font-size: $fontSize;
-  margin: 30px 0;
+  margin: 15px 0;
 }

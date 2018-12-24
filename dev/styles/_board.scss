@@ -2,11 +2,11 @@
 
 .main-title {
   @include title(5rem);
+  margin: 30px 0;
 }
 
 .instructions-title {
   @include title(4rem);
-  margin: 15px 0;
 }
 
 .instructions-subtitle {
@@ -23,6 +23,9 @@
   justify-content: space-between;
 }
 
+button {
+  @include buttonStyling;
+}
 
 .mobile {
   display: none;
@@ -134,12 +137,18 @@ footer {
     height: 50px;
     width: 50px;
   }
-  .instructions-button, .play-again-button {
+  .instructions-show-button, .play-again-button {
     margin: 30px 0;
   }
 }
 
 @media (max-width: 500px) {
+  body {
+    height: auto;
+  }
+  footer {
+    margin-top: 25px;
+  }
   .board {
     grid-template-columns: repeat(7, 45px);
     padding: 5px;
