@@ -13,18 +13,32 @@
   @include title(3rem);
 }
 
-.player-turn-text {
-  font-size: 3rem;
-  margin: 0;
+.game-info {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr auto;
+  grid-column-gap: 15px;
 }
 
-.main-nav {
-  display: flex;
-  justify-content: space-between;
+.instructions-show-button {
+  grid-column: 1 / 2;
 }
 
-button {
+.player-turn {
+  grid-column: 2 / 4;
   @include buttonStyling;
+  background: $bodyColor;
+  color: black;
+  &:hover {
+    background: $bodyColor;
+  }
+  &-text {
+    font-size: 1.6rem;
+    margin: 0;
+  }
+}
+
+.play-again-button {
+  grid-column: 4 / 5;
 }
 
 .mobile {
@@ -124,6 +138,8 @@ footer {
   box-shadow: -5px 5px 10px 0px rgba(0,0,0,0.19);
 }
 
+// MEDIA QUERIES FOR BOTH GENERAL AND BOARD STYLING
+
 @media (max-width: 650px) {
   .board {
     grid-template-columns: repeat(7, 60px);
@@ -137,8 +153,19 @@ footer {
     height: 50px;
     width: 50px;
   }
+  .player-turn {
+    grid-column: 1 / 5;
+    grid-row: 1 / 2;
+  }
+  .instructions-show-button {
+    grid-column: 1 / 3;
+  }
+  .play-again-button {
+    grid-column: 3 / 5;
+  }
   .instructions-show-button, .play-again-button {
-    margin: 30px 0;
+    grid-row: 2 / 3;
+    margin-top: 0;
   }
 }
 
@@ -165,9 +192,6 @@ footer {
     font-size: 4rem;
     margin: 30px 0;
   }
-  .player-turn-text {
-    font-size: 2rem;
-  }
 }
 
 @media (max-width: 350px) {
@@ -192,9 +216,6 @@ footer {
   .main-title {
     margin: 5px 0;
     font-size: 3rem;
-  }
-  .player-turn-text {
-    font-size: 1.8rem;
   }
   .instructions-title {
     margin: 5px 0 0 0;

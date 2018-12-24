@@ -27,6 +27,10 @@ h2, p {
   margin: 0 auto;
 }
 
+button {
+  @include buttonStyling;
+}
+
 @media (max-width: 650px) {
   .wrapper {
     max-width: 450px;

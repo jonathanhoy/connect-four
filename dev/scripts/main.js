@@ -132,7 +132,7 @@ $('.instructions-show-button').on('click', function() {
 })
 
 // Button to hide instructions
-$('.instructions-exit-button').on('click', function(e) {
+$('.instructions-hide-button').on('click', function(e) {
   $('.instructions-modal-container').hide();
 })
 
@@ -166,19 +166,6 @@ app.resetBoard = () => {
   })
 }
 
-// Chaos mode button for mobile
-$('.chaos-button').on('click', function() {
-  $('.instructions-modal-container').hide();
-  app.chaosMode = true;
-  app.konamiCodePosition = 0;
-  const text = 'life is chaos 😈'.toUpperCase();
-  swal({
-    title: text,
-    content: 'a'
-  });
-  app.chaosTitle();
-})
-
 // CHAOS MODE
 // Konami code credit: https://stackoverflow.com/questions/31626852/how-to-add-konami-code-in-a-website-based-on-html
 
@@ -195,8 +182,11 @@ app.allowedKeys = {
 };
 
 app.konamiCode = ['l', 'i', 'f', 'e', 'i', 's', 'c', 'h', 'a', 'o', 's'];
+
 app.konamiCodePosition = 0;
+
 app.chaosMode = false;
+
 document.addEventListener('keydown', function(e) {
   const key = app.allowedKeys[e.keyCode];
   const requiredKey = app.konamiCode[app.konamiCodePosition];
@@ -215,6 +205,7 @@ document.addEventListener('keydown', function(e) {
     app.konamiCodePosition = 0;
   }
 })
+
 app.chaosTitle = function() {
   setInterval(function () {
     const random = (app.chaosColors[Math.floor(Math.random() * app.chaosColors.length)]).toString();
@@ -223,6 +214,19 @@ app.chaosTitle = function() {
     $('.main-title').css('color', `${random}`);
   }, 50)
 }
+
+// Chaos mode button event listener for mobile
+$('.chaos-button').on('click', function () {
+  $('.instructions-modal-container').hide();
+  app.chaosMode = true;
+  app.konamiCodePosition = 0;
+  const text = 'life is chaos 😈'.toUpperCase();
+  swal({
+    title: text,
+    content: 'a'
+  });
+  app.chaosTitle();
+})
 
 // INIT
 app.init = function() {
