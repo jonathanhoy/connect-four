@@ -1,9 +1,4 @@
-.instructions-button, .play-again-button, .chaos-button {
-  margin: 15px 0;
-  color: white;
-}
-
-.instructions-pop-out-container.hidden {
+.instructions-modal-container.hidden {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -14,7 +9,7 @@
   display: none;
 }
 
-.instructions-pop-out {
+.instructions-modal {
   background: $bodyColor;
   position: fixed;
   top: 5%;
@@ -29,10 +24,10 @@
 .instructions-wrapper {
   width: 90%;
   margin: 0 auto;
+  margin-bottom: 40px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
 }
 
 .instructions-text {
@@ -40,17 +35,19 @@
 }
 
 .instructions-exit {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  font-size: 2rem;
+  @include buttonStyling;
+//   position: absolute;
+//   top: 10px;
+//   left: 10px;
+//   font-size: 2rem;
 }
 
 .chaos-button {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  display: none;
+  @include buttonStyling;
+  // position: absolute;
+  // bottom: 30px;
+  // right: 30px;
+  // display: none;
 }
 
 @media (max-width: 900px) {

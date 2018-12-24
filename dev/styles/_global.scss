@@ -1,0 +1,46 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: 'Comfortaa', sans-serif;
+  background-color: $bodyColor;
+  height: 100vh;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h2, p {
+  text-align: center;
+}
+
+.wrapper {
+  max-width: 590px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+@media (max-width: 650px) {
+  .wrapper {
+    max-width: 450px;
+  }
+}
+
+@media (max-width: 500px) {
+  .wrapper {
+    max-width: 335px;
+  }
+}
+
+@media (max-height: 320px) and (max-width: 600px) {
+  .wrapper {
+    max-width: 345px;
+  }
+}

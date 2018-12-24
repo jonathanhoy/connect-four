@@ -1,3 +1,72 @@
+// GENERAL APP STYLING
+
+.main-title {
+  @include title(5rem);
+}
+
+.instructions-title {
+  @include title(4rem);
+  margin: 15px 0;
+}
+
+.instructions-subtitle {
+  @include title(3rem);
+}
+
+.player-turn-text {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.mobile {
+  display: none;
+  &-pop-up-container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: rgba(33,33,33,0.7);
+  }
+  &-pop-up {
+    background: $bodyColor;
+    position: fixed;
+    top: 5%;
+    bottom: 5%;
+    left: 5%;
+    right: 5%;
+    border-radius: 10px;
+    border: 5px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h2 {
+      width: 75%;
+      text-align: center;
+    }
+  }
+}
+
+footer {
+  a {
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s;
+    &:hover {
+      color: $titleColor;
+    }
+  }
+}
+
+// BOARD STYLING
+
 .board-container {
   display: flex;
   justify-content: center;
@@ -65,6 +134,9 @@
     height: 50px;
     width: 50px;
   }
+  .instructions-button, .play-again-button {
+    margin: 30px 0;
+  }
 }
 
 @media (max-width: 500px) {
@@ -79,6 +151,19 @@
   .piece {
     height: 35px;
     width: 35px;
+  }
+  .main-title {
+    font-size: 4rem;
+    margin: 30px 0;
+  }
+  .player-turn-text {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .mobile {
+    display: block;
   }
 }
 
@@ -95,9 +180,15 @@
     height: 35px;
     width: 35px;
   }
-}
-
-button {
-  border: none;
-  background: none;
+  .main-title {
+    margin: 5px 0;
+    font-size: 3rem;
+  }
+  .player-turn-text {
+    font-size: 1.8rem;
+  }
+  .instructions-title {
+    margin: 5px 0 0 0;
+    font-size: 3rem;
+  }
 }

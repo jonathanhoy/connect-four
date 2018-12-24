@@ -128,12 +128,12 @@ app.alertWin = function(color) {
 
 // Button to show instructions
 $('.instructions-button').on('click', function() {
-  $('.instructions-pop-out-container').show();
+  $('.instructions-modal-container').show();
 })
 
 // Icon to hide instructions
-$('.instructions-exit').on('click', function(e) {
-  $('.instructions-pop-out-container').hide();
+$('.instructions-exit').on('click', function() {
+  $('.instructions-modal-container').hide();
 })
 
 // Play again button that clears board and arrays
@@ -162,7 +162,7 @@ app.resetBoard = () => {
 
 // Chaos mode button for mobile
 $('.chaos-button').on('click', function() {
-  $('.instructions-pop-out-container').hide();
+  $('.instructions-modal-container').hide();
   app.chaosMode = true;
   app.konamiCodePosition = 0;
   const text = 'life is chaos 😈'.toUpperCase();

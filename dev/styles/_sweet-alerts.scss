@@ -11,7 +11,3 @@
 .swal-button {
   @include buttonStyling();
 }
-
-.swal-button:hover, .instructions-button:hover, .play-again-button:hover {
-  background-color: $highlightColor;
-}
