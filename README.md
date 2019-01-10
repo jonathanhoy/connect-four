@@ -1,5 +1,10 @@
-# gulp-boilerplate
+# Project 3
 
-1. `git clone` this repo
-1. `npm i` **or** `npm install`
-1. `gulp`
+This project was created for [HackerYou's][HY] full-time web development immersive bootcamp.
+
+## Project Scope
+
+The scope of the project was to use JavaScript and jQuery to create a page, game, or app that is interactive.
+
+<!-- Links -->
+[HY]: http://hackeryou.com
