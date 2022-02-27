@@ -25,15 +25,26 @@
 
 .player-turn {
   grid-column: 2 / 4;
-  @include buttonStyling;
-  background: $bodyColor;
-  color: black;
-  &:hover {
-    background: $bodyColor;
-  }
+  @include buttonStylingNoHover;
   &-text {
     font-size: 1.6rem;
     margin: 0;
+  }
+  &.yellow {
+    p {
+      color: black;
+    }
+  }
+  &.red {
+    p {
+      color: white;
+    }
+  }
+  .player-turn-text {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
 
@@ -126,8 +137,16 @@ footer {
   background-color: $redMarker;
 }
 
+.red-text {
+  color: $redMarker;
+}
+
 .yellow {
   background-color: $yellowMarker;
+}
+
+.yellow-text {
+  color: $yellowMarker;
 }
 
 .piece {
@@ -156,6 +175,10 @@ footer {
   .player-turn {
     grid-column: 1 / 5;
     grid-row: 1 / 2;
+    .player-turn-text {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
   }
   .instructions-show-button {
     grid-column: 1 / 3;

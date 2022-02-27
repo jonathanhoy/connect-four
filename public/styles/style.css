@@ -163,7 +163,7 @@ h2, p {
   margin: 0 auto; }
 
 button {
-  padding: 7px 19px;
+  padding: 8px 16px;
   background-color: #6495ED;
   font-size: 1.6rem;
   border: 3px solid black;
@@ -222,7 +222,7 @@ button {
 
 .player-turn {
   grid-column: 2 / 4;
-  padding: 7px 19px;
+  padding: 8px 16px;
   background-color: #6495ED;
   font-size: 1.6rem;
   border: 3px solid black;
@@ -230,16 +230,23 @@ button {
   -webkit-box-shadow: -5px 5px 10px 0px rgba(0, 0, 0, 0.19);
           box-shadow: -5px 5px 10px 0px rgba(0, 0, 0, 0.19);
   margin: 15px 0;
-  color: white;
-  background: #FAF0E6;
-  color: black; }
-  .player-turn:hover {
-    background-color: #78cbf2; }
-  .player-turn:hover {
-    background: #FAF0E6; }
+  color: white; }
   .player-turn-text {
     font-size: 1.6rem;
     margin: 0; }
+  .player-turn.yellow p {
+    color: black; }
+  .player-turn.red p {
+    color: white; }
+  .player-turn .player-turn-text {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding-left: 16px;
+    padding-right: 16px; }
 
 .play-again-button {
   grid-column: 4 / 5; }
@@ -343,8 +350,14 @@ footer a {
 .red {
   background-color: #ff6347; }
 
+.red-text {
+  color: #ff6347; }
+
 .yellow {
   background-color: #ffe14f; }
+
+.yellow-text {
+  color: #ffe14f; }
 
 .piece {
   height: 60px;
@@ -367,6 +380,9 @@ footer a {
   .player-turn {
     grid-column: 1 / 5;
     grid-row: 1 / 2; }
+    .player-turn .player-turn-text {
+      padding-left: 32px;
+      padding-right: 32px; }
   .instructions-show-button {
     grid-column: 1 / 3; }
   .play-again-button {
@@ -452,16 +468,12 @@ footer a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between; }
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end; }
 
 .instructions-text {
   line-height: 1.6; }
-
-@media (max-width: 900px) {
-  .chaos-button {
-    display: block; } }
 
 @media (max-height: 320px) and (max-width: 600px) {
   .instructions-title {
@@ -479,7 +491,7 @@ footer a {
   text-align: center; }
 
 .swal-button {
-  padding: 7px 19px;
+  padding: 8px 16px;
   background-color: #6495ED;
   font-size: 1.6rem;
   border: 3px solid black;

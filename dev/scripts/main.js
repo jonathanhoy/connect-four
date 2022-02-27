@@ -52,9 +52,11 @@ app.changeTurn = function() {
   if (currentColor === 'red') {
     app.nextTurn.push('yellow');
     $('.turn-indicator').text(`Yellow`);
+    $('.player-turn').removeClass('red').addClass('yellow');
   } else if (currentColor === 'yellow') {
     app.nextTurn.push('red');
     $('.turn-indicator').text(`Red`);
+    $('.player-turn').removeClass('yellow').addClass('red');
   }
 };
 
@@ -165,68 +167,6 @@ app.resetBoard = () => {
     $('.cell').css('background-color', 'white');
   })
 }
-
-// CHAOS MODE
-// Konami code credit: https://stackoverflow.com/questions/31626852/how-to-add-konami-code-in-a-website-based-on-html
-
-// app.allowedKeys = {
-//   76: 'l',
-//   73: 'i',
-//   70: 'f',
-//   69: 'e',
-//   83: 's',
-//   67: 'c',
-//   72: 'h',
-//   65: 'a',
-//   79: 'o'
-// };
-
-// app.konamiCode = ['l', 'i', 'f', 'e', 'i', 's', 'c', 'h', 'a', 'o', 's'];
-
-// app.konamiCodePosition = 0;
-
-// app.chaosMode = false;
-
-// document.addEventListener('keydown', function(e) {
-//   const key = app.allowedKeys[e.keyCode];
-//   const requiredKey = app.konamiCode[app.konamiCodePosition];
-//   if (key === requiredKey) {
-//     app.konamiCodePosition++;
-//     if (app.konamiCodePosition === app.konamiCode.length) {
-//       app.chaosMode = true;
-//       app.konamiCodePosition = 0;
-//       const text = 'life is chaos 😈'.toUpperCase();
-//       swal({
-//         title: text,
-//       });
-//       // app.chaosTitle();
-//     }
-//   } else {
-//     app.konamiCodePosition = 0;
-//   }
-// })
-
-// app.chaosTitle = function() {
-//   setInterval(function () {
-//     const random = (app.chaosColors[Math.floor(Math.random() * app.chaosColors.length)]).toString();
-//     const text = ('life is chaos').toUpperCase();
-//     $('.main-title').text(`${text}`);
-//     $('.main-title').css('color', `${random}`);
-//   }, 50)
-// }
-
-// Chaos mode button event listener for mobile
-// $('.chaos-button').on('click', function () {
-//   $('.instructions-modal-container').hide();
-//   app.chaosMode = true;
-//   app.konamiCodePosition = 0;
-//   const text = 'life is chaos 😈'.toUpperCase();
-//   swal({
-//     title: text,
-//     content: 'a'
-//   });
-//   app.chaosTitle();
-// })
 
 // INIT
 app.init = function() {

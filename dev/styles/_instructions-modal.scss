@@ -31,17 +31,12 @@
 
 .instructions-nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+
 }
 
 .instructions-text {
   line-height: 1.6;
-}
-
-@media (max-width: 900px) {
-  .chaos-button {
-    display: block;
-  }
 }
 
 @media (max-height: 320px) and (max-width: 600px) {

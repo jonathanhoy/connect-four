@@ -81,8 +81,13 @@
 		</section>
 		<section class="game-info">
 			<button class="instructions-show-button">Instructions</button>
-			<section class="player-turn">
-				<p class="player-turn-text">Current turn: <span class="turn-indicator">Red</span> player</p>
+			<section class="player-turn red">
+				<p class="player-turn-text"><span>Current turn:</span>
+					<span class="turn-indicator-container">
+						<span class="turn-indicator">Red</span>
+						player
+					</span>
+				</p>
 			</section>
 			<button class="play-again-button">Play again</button>
 		</section>
@@ -92,7 +97,6 @@
 			<div class="instructions-wrapper">
 				<nav class="instructions-nav">
 					<button class="instructions-hide-button">Exit</button>
-					<!-- <button class="chaos-button">What is life?</button> -->
 				</nav>
 				<h2 class="instructions-title">Instructions</h2>
 				<h3 class="instructions-subtitle">How to play</h3>
@@ -114,13 +118,19 @@
 		</div>
 	</section>
 	<footer>
-		<p><a href="https://jonathanhoy.com/" class="portfolio-link">Back to Portfolio</a> | &copy; Jonathan 2019</p>
+		<p><a href="https://jonathanhoy.com/" class="portfolio-link">&copy; Jonathan
+				<span class="year"></span></a>
+		</p>
 	</footer>
 
 	<script src='https://code.jquery.com/jquery-3.2.1.min.js'
 		integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=' crossorigin='anonymous'></script>
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<script src="public/scripts/main.js"></script>
+	<script>
+		const date = new Date().getFullYear();
+		document.querySelector('.year').innerHTML = date;
+	</script>
 </body>
 
 </html>
