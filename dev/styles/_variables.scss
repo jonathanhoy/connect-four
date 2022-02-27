@@ -6,28 +6,16 @@ $yellowMarker: #ffe14f;
 $redMarker: #ff6347;
 
 @mixin buttonStyling {
-  padding: 8px 16px;
+  padding: 8px 24px;
   background-color: $boardColor;
   font-size: 1.6rem;
   border: 3px solid black;
-  border-radius: 5px;
+  border-radius: 32px;
   box-shadow: -5px 5px 10px 0px rgba(0,0,0,0.19);
-  margin: 15px 0;
   color: white;
   &:hover {
     background-color: $highlightColor;
   }
-}
-
-@mixin buttonStylingNoHover {
-  padding: 8px 16px;
-  background-color: $boardColor;
-  font-size: 1.6rem;
-  border: 3px solid black;
-  border-radius: 5px;
-  box-shadow: -5px 5px 10px 0px rgba(0,0,0,0.19);
-  margin: 15px 0;
-  color: white;
 }
 
 @mixin title($fontSize) {

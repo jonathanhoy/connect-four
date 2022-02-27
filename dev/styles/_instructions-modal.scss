@@ -32,7 +32,9 @@
 .instructions-nav {
   display: flex;
   justify-content: flex-end;
-
+  button {
+    margin-top: 15px;
+  }
 }
 
 .instructions-text {
