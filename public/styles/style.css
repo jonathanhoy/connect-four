@@ -168,8 +168,6 @@ button {
   font-size: 1.6rem;
   border: 3px solid black;
   border-radius: 32px;
-  -webkit-box-shadow: -5px 5px 10px 0px rgba(0, 0, 0, 0.19);
-          box-shadow: -5px 5px 10px 0px rgba(0, 0, 0, 0.19);
   color: white; }
   button:hover {
     background-color: #78cbf2; }
@@ -299,9 +297,7 @@ footer a {
   border: 5px solid black;
   border-radius: 10px;
   padding: 10px;
-  background: #6495ED;
-  -webkit-box-shadow: -5px 5px 10px 0px rgba(0, 0, 0, 0.19);
-          box-shadow: -5px 5px 10px 0px rgba(0, 0, 0, 0.19); }
+  background: #6495ED; }
 
 .column {
   display: -webkit-box;
@@ -354,9 +350,7 @@ footer a {
   height: 60px;
   width: 60px;
   border-radius: 50%;
-  border: 2px solid black;
-  -webkit-box-shadow: -5px 5px 10px 0px rgba(0, 0, 0, 0.19);
-          box-shadow: -5px 5px 10px 0px rgba(0, 0, 0, 0.19); }
+  border: 2px solid black; }
 
 @media (max-width: 650px) {
   .board {
@@ -488,8 +482,6 @@ footer a {
   font-size: 1.6rem;
   border: 3px solid black;
   border-radius: 32px;
-  -webkit-box-shadow: -5px 5px 10px 0px rgba(0, 0, 0, 0.19);
-          box-shadow: -5px 5px 10px 0px rgba(0, 0, 0, 0.19);
   color: white; }
   .swal-button:hover {
     background-color: #78cbf2; }
