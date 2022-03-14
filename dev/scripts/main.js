@@ -143,22 +143,20 @@ document.addEventListener('keyup', function(e) {
 })
 
 app.resetBoard = () => {
-  $('button').on('click', function () {
-    app.columns = {
-      a: [],
-      b: [],
-      c: [],
-      d: [],
-      e: [],
-      f: [],
-      g: [],
-      h: [],
-      i: [],
-      j: []
-    }
-    $('.piece').remove();
-    $('.cell').css('background-color', 'white');
-  })
+  app.columns = {
+    a: [],
+    b: [],
+    c: [],
+    d: [],
+    e: [],
+    f: [],
+    g: [],
+    h: [],
+    i: [],
+    j: []
+  }
+  $('.piece').remove();
+  $('.cell').css('background-color', 'white');
 }
 
 // INIT
